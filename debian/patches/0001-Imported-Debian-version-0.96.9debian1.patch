@@ -1,0 +1,74 @@
+From: Julian Andres Klode <jak@debian.org>
+Date: Tue, 15 Sep 2015 16:02:03 +0200
+Subject: Disable driver support
+
+Disable support for drivers, as this is somewhat Ubuntu specific.
+---
+ data/gtkbuilder/main.ui                         | 5 ++++-
+ softwareproperties/gtk/SoftwarePropertiesGtk.py | 9 +++++++--
+ 2 files changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/data/gtkbuilder/main.ui b/data/gtkbuilder/main.ui
+index ed4abc1..f12a3dd 100644
+--- a/data/gtkbuilder/main.ui
++++ b/data/gtkbuilder/main.ui
+@@ -701,7 +701,7 @@
+                 </child>
+                 <child>
+                   <object class="GtkAlignment" id="alignment15">
+-                    <property name="visible">True</property>
++                    <property name="visible">False</property>
+                     <property name="can_focus">False</property>
+                     <property name="left_padding">12</property>
+                     <child>
+@@ -955,6 +955,7 @@
+                 <property name="tab_fill">False</property>
+               </packing>
+             </child>
++            <!--
+             <child>
+               <object class="GtkBox" id="vbox_drivers">
+                 <property name="visible">True</property>
+@@ -1052,6 +1053,7 @@
+                 <property name="tab_fill">False</property>
+               </packing>
+             </child>
++                        -->
+             <child>
+               <object class="GtkBox" id="dev_options">
+                 <property name="visible">True</property>
+@@ -1116,6 +1118,7 @@
+                 <property name="tab_fill">False</property>
+               </packing>
+             </child>
++            -->
+           </object>
+           <packing>
+             <property name="expand">True</property>
+diff --git a/softwareproperties/gtk/SoftwarePropertiesGtk.py b/softwareproperties/gtk/SoftwarePropertiesGtk.py
+index 11e65c4..cf375c1 100644
+--- a/softwareproperties/gtk/SoftwarePropertiesGtk.py
++++ b/softwareproperties/gtk/SoftwarePropertiesGtk.py
+@@ -51,7 +51,11 @@ import softwareproperties.distro
+ from softwareproperties.SoftwareProperties import SoftwareProperties
+ import softwareproperties.SoftwareProperties
+ 
+-from UbuntuDrivers import detect
++try:
++    from UbuntuDrivers import detect
++except ImportError as e:
++    detect = None
++    logging.error("Cannot import UbuntuDrivers: " + str(e))
+ 
+ if GLib.pyglib_version < (3, 9, 1):
+     GLib.threads_init()
+@@ -178,7 +182,8 @@ class SoftwarePropertiesGtk(SoftwareProperties, SimpleGtkbuilderApp):
+         self.init_distro()
+         self.show_distro()
+         # Setup and show the Additonal Drivers tab
+-        self.init_drivers()
++        #DEBIAN self.init_drivers()
++        self.vbox_drivers = None #DEBIAN
+ 
+         # Connect to switch-page before setting initial tab. Otherwise the
+         # first switch goes unnoticed.

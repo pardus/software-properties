@@ -1,3 +1,25 @@
+software-properties (0.96.20.2-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Drop obsolete python2 dependencies from the autopkgtest. Closes:
+    #943270
+  * Add missing build-depends on dh-python.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 23 Dec 2019 09:35:24 +0000
+
+software-properties (0.96.20.2-2) unstable; urgency=medium
+
+  * softwareproperties/AptAuth.py: Use apt-key (Closes: #867681)
+  * debian/gbp.conf: Point to debian/buster
+
+ -- Julian Andres Klode <jak@debian.org>  Sat, 30 Mar 2019 20:45:34 +0100
+
+software-properties (0.96.20.2-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.96.20.2
+
+ -- Julian Andres Klode <jak@debian.org>  Thu, 30 Jun 2016 12:13:31 +0200
+
 software-properties (0.96.20.2) xenial; urgency=medium
 
   * SoftwarePropertiesGtk.py: only add mirror choices if there are mirrors
@@ -13,6 +35,19 @@ software-properties (0.96.20.1) xenial; urgency=medium
     16.04 (LP: #1591382).
 
  -- Corey Bryant <corey.bryant@canonical.com>  Fri, 10 Jun 2016 17:32:35 -0400
+
+software-properties (0.96.20-1) unstable; urgency=medium
+
+  [ Julian Andres Klode ]
+  * Switch to 3.0 (quilt), store upstream code changes in patches
+  * Imported Upstream version 0.96.18,0.96.19,0.96.20
+  * Rebase the patches
+
+  [ Matthias Klumpp ]
+  * trivial: Typo
+  * Merge error-condition and PackageKit patch
+
+ -- Julian Andres Klode <jak@debian.org>  Tue, 22 Mar 2016 17:36:48 +0100
 
 software-properties (0.96.20) xenial; urgency=medium
 
@@ -104,6 +139,31 @@ software-properties (0.96.10) wily; urgency=medium
     14.04 (LP: #1472586).
 
  -- Corey Bryant <corey.bryant@canonical.com>  Wed, 02 Sep 2015 12:35:10 -0400
+
+software-properties (0.96.9debian1+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload, with permission of juliank
+  * Implement support for PackageKit (Closes: #730807)
+  * Fix a few small quirks in debian/copyright
+  * Wrap-and-sort debian/control
+  * software-properties-drivers.desktop: Fix typo
+    (NotShownIn -> NotShowIn)
+  * Build with --parallel (Closes: #726723)
+  * Autotests: Depend on xauth (should fix CI failure)
+  * Add Vcs-* entries for the new Git repository
+  * Stop building the Python2 module
+
+ -- Matthias Klumpp <mak@debian.org>  Sat, 12 Mar 2016 22:18:24 +0100
+
+software-properties (0.96.9debian1) unstable; urgency=medium
+
+  * Merge with Ubuntu, remaining changes:
+    - Drop driver handling
+    - Drop Ubuntu release upgrade thing
+    - Do not use dh-translations
+    - Use copyright-format 1.0 for debian/copyright
+
+ -- Julian Andres Klode <jak@debian.org>  Tue, 15 Sep 2015 16:02:03 +0200
 
 software-properties (0.96.9) wily; urgency=medium
 
@@ -352,6 +412,13 @@ software-properties (0.92.26) saucy; urgency=low
     - CVE-2013-1061
 
  -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 18 Sep 2013 13:17:35 -0400
+
+software-properties (0.92.25debian1) unstable; urgency=low
+
+  * Merge with Ubuntu saucy.
+  * Disable Ubuntu stuff like drivers and new releases (Closes: #666869)
+
+ -- Julian Andres Klode <jak@debian.org>  Fri, 23 Aug 2013 19:16:34 +0200
 
 software-properties (0.92.25) saucy; urgency=low
 
@@ -802,6 +869,12 @@ software-properties (0.83) quantal; urgency=low
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 12 Jun 2012 11:57:18 +0200
 
+software-properties (0.82.7.1debian1) unstable; urgency=low
+
+  * Merge with Ubuntu 12.04 ("precise") LTS
+
+ -- Julian Andres Klode <jak@debian.org>  Sat, 16 Jun 2012 17:57:42 +0200
+
 software-properties (0.82.7.1) precise-proposed; urgency=low
 
   * manually shift the policy index to work around wrong upgrade policy being
@@ -841,6 +914,31 @@ software-properties (0.82.5) precise; urgency=low
     menu popup() call. (LP: #815236)
 
  -- Martin Pitt <martin.pitt@ubuntu.com>  Wed, 07 Mar 2012 10:14:52 +0100
+
+software-properties (0.82.4debian3) unstable; urgency=low
+
+  * Fix the GPL-3 license statement to refer to GPL-3, not LGPL-3
+
+ -- Julian Andres Klode <jak@debian.org>  Tue, 06 Mar 2012 14:32:19 +0100
+
+software-properties (0.82.4debian2) unstable; urgency=low
+
+  * Rewrite copyright file, use copyright-format 1.0
+
+ -- Julian Andres Klode <jak@debian.org>  Tue, 06 Mar 2012 13:11:09 +0100
+
+software-properties (0.82.4debian1) unstable; urgency=low
+
+  * Upload 0.8X branch from experimental to unstable
+  * Merge with Ubuntu, remaining differences:
+    - debian/control: Maintainer, VCS differences
+    - debian/rules: Do not use dh-translations
+  * The following issues are fixed:
+    - Now build against Python 2.7 (Closes: #644539)
+    - Updated for latest GObject Introspection (Closes: #639611)
+  * Change Standards-Version to 3.9.3, no further changes required
+
+ -- Julian Andres Klode <jak@debian.org>  Tue, 06 Mar 2012 11:13:07 +0100
 
 software-properties (0.82.4) precise; urgency=low
 
@@ -889,16 +987,6 @@ software-properties (0.82.2) precise; urgency=low
     (desktop-p-control-center-cleanup spec)
 
  -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 11 Jan 2012 17:19:42 +0100
-
-software-properties (0.82.1debian1) unstable; urgency=low
-
-  * Merge with Ubuntu, remaining differences:
-    - debian/control: Maintainer, VCS differences
-    - debian/rules: Do not use dh-translations
-    - softwareproperties/gtk/CdromProgress.py: Use apt.progress.base as needed
-  * Fix more uses of the removed python-apt API
-
- -- Julian Andres Klode <jak@debian.org>  Mon, 21 Nov 2011 16:04:53 +0100
 
 software-properties (0.82) precise; urgency=low
 

@@ -1,0 +1,6 @@
+0001-Imported-Debian-version-0.96.9debian1.patch
+0002-Drop-po-urd.po.patch
+0003-Fix-typo-in-software-properties-drivers.desktop-and-.patch
+0004-Implement-PackageKit-support.patch
+0006-l18n-template-rebuild.patch
+0006-softwareproperties-AptAuth.py-Use-apt-key.patch

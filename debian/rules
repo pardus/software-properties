@@ -7,22 +7,20 @@ PY3DEFAULT := $(shell py3versions -d)
 PY3 := $(filter-out $(PY3DEFAULT),$(PY3REQUESTED)) python3
 
 %:
-	dh $@ --with python2,python3,translations
+	dh $@ --parallel --with python3
 
 override_dh_auto_clean:
-	dh_auto_clean
+	python3 setup.py clean
 	rm -rf build
 
 override_dh_auto_build:
-	dh_auto_build
 	set -ex; for python in $(PY3); do \
 		$$python setup.py build; \
 	done
 
 override_dh_auto_install:
-	dh_auto_install
 	set -ex; for python in $(PY3); do \
-               $$python setup.py install --root=$(CURDIR)/debian/tmp \
+		$$python setup.py install --root=$(CURDIR)/debian/tmp \
 						--install-layout=deb; \
 	done
 

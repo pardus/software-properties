@@ -1,2 +1,11 @@
 Tests: run-tests
-Depends: @, xvfb, dbus-x11, python-dbus, python-pycurl, python3-pycurl, python-mock, python3-mock, python-distutils-extra, python-setuptools, python3-distutils-extra, python3-setuptools, python-gi, python3-gi, pyflakes, pyflakes3
+Depends: @,
+         xvfb,
+         xauth,
+         dbus-x11,
+         python3-pycurl,
+         python3-mock,
+         python3-distutils-extra,
+         python3-setuptools,
+         python3-gi,
+         pyflakes3

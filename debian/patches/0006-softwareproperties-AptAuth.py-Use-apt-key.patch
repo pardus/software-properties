@@ -1,0 +1,110 @@
+From: Julian Andres Klode <jak@debian.org>
+Date: Sat, 30 Mar 2019 20:41:15 +0100
+Subject: softwareproperties/AptAuth.py: Use apt-key
+
+This fixes the code to not generate gpg keybox files rather
+than classical keyring files (concatenated public keys), which
+broke apt.
+
+Closes: #867681
+---
+ softwareproperties/AptAuth.py | 61 +++++++++++++++++--------------------------
+ 1 file changed, 24 insertions(+), 37 deletions(-)
+
+diff --git a/softwareproperties/AptAuth.py b/softwareproperties/AptAuth.py
+index 7cc88ce..cbbe94f 100644
+--- a/softwareproperties/AptAuth.py
++++ b/softwareproperties/AptAuth.py
+@@ -22,6 +22,7 @@
+ from __future__ import print_function
+ 
+ import atexit
++import datetime
+ import gettext
+ import os
+ import shutil
+@@ -44,61 +45,47 @@ N_("Ubuntu Extras Archive Automatic Signing Key <ftpmaster@ubuntu.com>")
+ 
+ class AptAuth:
+     def __init__(self, rootdir="/"):
+-        self.gpg = ["/usr/bin/gpg"]
+-        self.base_opt = self.gpg + [
+-            "--no-options", 
+-            "--no-default-keyring",
+-            "--no-auto-check-trustdb",
+-            "--trust-model", "always",
+-            "--keyring", os.path.join(rootdir, "etc/apt/trusted.gpg"),
+-            ]
++        self.rootdir = rootdir
+         self.tmpdir = tempfile.mkdtemp()
+-        self.base_opt += ["--secret-keyring", 
+-                          os.path.join(self.tmpdir, "secring.gpg")]
+-        self.list_opt = self.base_opt + ["--with-colons",
+-                                         "--batch",
+-                                         "--list-keys"]
+-        self.rm_opt = self.base_opt + ["--quiet",
+-                                       "--batch",
+-                                       "--delete-key",
+-                                       "--yes"]
+-        self.add_opt = self.base_opt + ["--quiet", 
+-                                        "--batch",
+-                                        "--import"]
++        self.aptconf = os.path.join(self.tmpdir, 'apt.conf')
++        with open(self.aptconf, 'w') as f:
++            f.write('DIR "%s";\n' % self.rootdir)
++        os.environ['APT_CONFIG'] = self.aptconf
+         atexit.register(self._cleanup_tmpdir)
+ 
+     def _cleanup_tmpdir(self):
+         shutil.rmtree(self.tmpdir)
+-       
++
+     def list(self):
++        cmd = ["/usr/bin/apt-key", "--quiet", "adv", "--with-colons", "--batch", "--fixed-list-mode", "--list-keys"]
+         res = []
+-        #print(self.list_opt)
+-        p = subprocess.Popen(
+-            self.list_opt, stdout=PIPE, universal_newlines=True).stdout
++        p = subprocess.Popen(cmd, stdout=PIPE, stderr=PIPE, universal_newlines=True).stdout
++        name = ''
+         for line in p:
+             fields = line.split(":")
+-            if fields[0] == "pub":
++            if fields[0] in ["pub", "uid"]:
+                 name = fields[9]
+-                res.append("%s %s\n%s" %((fields[4])[-8:],fields[5], _(name)))
++            if fields[0] == "pub":
++                key = fields[4]
++                expiry = datetime.date.fromtimestamp(int(fields[5])).isoformat()
++            if not name:
++                continue
++            res.append("%s %s\n%s" % (key, expiry, _(name)))
++            name = ''
+         p.close()
+         return res
+ 
+     def add(self, filename):
+-        #print("request to add " + filename)
+-        cmd = self.add_opt[:]
+-        cmd.append(filename)
+-        #print("cmd is: %s" % ' '.join(cmd))
+-        p = subprocess.Popen(cmd)
++        cmd = ["/usr/bin/apt-key", "--quiet", "--fakeroot", "add", filename]
++        p = subprocess.Popen(cmd, stderr=PIPE)
+         return (p.wait() == 0)
+         
+     def update(self):
+-        cmd = ["/usr/bin/apt-key", "update"]
+-        p = subprocess.Popen(cmd)
++        cmd = ["/usr/bin/apt-key", "--quiet", "--fakeroot", "update"]
++        p = subprocess.Popen(cmd, stderr=PIPE)
+         return (p.wait() == 0)
+ 
+     def rm(self, key):
+-        #print("request to remove " + key)
+-        cmd = self.rm_opt[:]
+-        cmd.append(key)
+-        p = subprocess.Popen(cmd)
++        cmd = ["/usr/bin/apt-key", "--quiet", "--fakeroot", "rm", key]
++        p = subprocess.Popen(cmd, stderr=PIPE)
+         return (p.wait() == 0)

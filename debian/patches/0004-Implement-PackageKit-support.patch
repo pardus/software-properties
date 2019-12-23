@@ -1,0 +1,385 @@
+From: Matthias Klumpp <mak@debian.org>
+Date: Sun, 13 Mar 2016 15:24:56 +0100
+Subject: Implement PackageKit support
+
+This replaces the obsolete Aptdaemon bits and unifies the way cache
+updates are handled using PackageKit.
+---
+ softwareproperties/gtk/DialogCacheOutdated.py   | 101 ++++++++++++++++--------
+ softwareproperties/gtk/SoftwarePropertiesGtk.py |  97 ++++++++++++++---------
+ softwareproperties/kde/SoftwarePropertiesKDE.py |  50 +++++++++++-
+ 3 files changed, 175 insertions(+), 73 deletions(-)
+
+diff --git a/softwareproperties/gtk/DialogCacheOutdated.py b/softwareproperties/gtk/DialogCacheOutdated.py
+index 31e1dd7..a1d7c05 100644
+--- a/softwareproperties/gtk/DialogCacheOutdated.py
++++ b/softwareproperties/gtk/DialogCacheOutdated.py
+@@ -21,17 +21,51 @@
+ #  USA
+ 
+ import os
+-from gi.repository import GObject, Gtk
+-
+-import aptdaemon.client
+-import aptdaemon.enums
+-from aptdaemon.gtk3widgets import AptErrorDialog, AptProgressDialog
++import gi
++gi.require_version('PackageKitGlib', '1.0')
++gi.require_version('Gdk', '3.0')
++gi.require_version('Gtk', '3.0')
++from gi.repository import GObject, Gdk, Gtk
++from gi.repository import PackageKitGlib as packagekit
++from gettext import gettext as _
+ 
+ from softwareproperties.gtk.utils import (
+     setup_ui,
+ )
+ 
+ 
++class ProgressDialog(Gtk.Window):
++    """A small helper window to display progress"""
++
++    def __init__(self, parent):
++        Gtk.Window.__init__(self, title=_("Cache Refresh"))
++        self.set_transient_for(parent)
++        self.set_position(Gtk.WindowPosition.CENTER)
++        self.set_border_width(16)
++        self.set_modal(True)
++        self.set_deletable(False)
++
++        self.set_default_size(300, 75)
++        geometry = Gdk.Geometry()
++        geometry.min_width = 210
++        geometry.min_height = 60
++        geometry.max_width = 800
++        geometry.max_height = 260
++        self.set_geometry_hints(None, geometry, Gdk.WindowHints.MIN_SIZE)
++        self.set_geometry_hints(None, geometry, Gdk.WindowHints.MAX_SIZE)
++
++        self.box = Gtk.Box(spacing=6, orientation=Gtk.Orientation.VERTICAL)
++        self.add(self.box)
++
++        self.label = Gtk.Label(xalign=0)
++        self.label.set_markup("<b><big>{}</big></b>".format(_("Refreshing software cache")))
++        self.box.pack_start(self.label, False, False, 0)
++
++        # create a progress bar
++        self.progressbar = Gtk.ProgressBar()
++        self.box.pack_start(self.progressbar, True, True, 0)
++
++
+ class DialogCacheOutdated:
+     def __init__(self, parent, datadir):
+         """setup up the gtk dialog"""
+@@ -41,44 +75,45 @@ class DialogCacheOutdated:
+         self.dialog = self.dialog_cache_outofdate
+         self.dialog.set_transient_for(parent)
+ 
+-    def _run_transaction(self, transaction):
+-        transaction.connect('finished', self._on_transaction_done)
+-        dia = AptProgressDialog(transaction) #parent=self.parent.get_window())
+-        dia.run(close_on_finished=True, show_error=True,
+-                reply_handler=lambda: True,
+-                error_handler=self._on_error)
+-
+-    def _on_transaction_done(self, transaction, exit_state):
+-        self.loop.quit()
++    def on_pktask_progress(self, progress, ptype, udata=(None,)):
++        if ptype == packagekit.ProgressType.PERCENTAGE:
++            perc = progress.get_property('percentage')
++            self._pdia.progressbar.set_fraction(perc / 100.0)
+ 
+-    def _on_error(self, error):
++    def on_pktask_finish(self, source, result, udata=(None,)):
++        results = None
+         try:
+-            raise error
+-        except aptdaemon.errors.NotAuthorizedError:
+-            # Silently ignore auth failures
+-            return
+-        except aptdaemon.errors.TransactionFailed as _error:
+-            error = _error
+-        except Exception as _error:
+-            error = aptdaemon.errors.TransactionFailed(aptdaemon.enums.ERROR_UNKNOWN,
+-                                                       str(_error))
+-        dia = AptErrorDialog(error)
+-        dia.run()
+-        dia.hide()
++            results = self._pktask.generic_finish(result)
++        except Exception as e:
++            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.ERROR,
++                Gtk.ButtonsType.CANCEL, _("Error while refreshing cache"))
++            dialog.format_secondary_text(str(e))
++            dialog.run()
++        self._loop.quit ()
+ 
+     def run(self):
+         """run the dialog, and if reload was pressed run cache update"""
+         res = self.dialog.run()
+         self.dialog.hide()
+         if res == Gtk.ResponseType.APPLY:
+-            self.loop = GObject.MainLoop()
+-
+-            ac = aptdaemon.client.AptClient()
+-            ac.update_cache(reply_handler=self._run_transaction,
+-                            error_handler=self._on_error)
++            self._pktask = packagekit.Task()
++            self._pdia = ProgressDialog(self.parent)
++            self._loop = GObject.MainLoop()
++            self._pdia.show_all()
+ 
+             self.parent.set_sensitive(False)
+-            self.loop.run()
++            try:
++                self._pktask.refresh_cache_async (False, # force
++                                                  None,  # GCancellable
++                                                  self.on_pktask_progress,
++                                                  (None,), # user data
++                                                  self.on_pktask_finish,
++                                                  (None,));
++            except Exception as e:
++                print("Error while requesting cache refresh: {}".format(e))
++
++            self._loop.run()
++            self._pdia.hide()
+             self.parent.set_sensitive(True)
+ 
+         return res
+diff --git a/softwareproperties/gtk/SoftwarePropertiesGtk.py b/softwareproperties/gtk/SoftwarePropertiesGtk.py
+index cf375c1..92037a9 100644
+--- a/softwareproperties/gtk/SoftwarePropertiesGtk.py
++++ b/softwareproperties/gtk/SoftwarePropertiesGtk.py
+@@ -27,16 +27,21 @@ from __future__ import absolute_import, print_function
+ import apt
+ import apt_pkg
+ import dbus
++import dbus.glib
++import dbus.mainloop.glib
+ from gettext import gettext as _
+ import gettext
+ import os
+ import subprocess
+-from aptdaemon import client
+-from aptdaemon.errors import NotAuthorizedError, TransactionFailed
+ import logging
+ import threading
+ import sys
+ 
++import gi
++gi.require_version('PackageKitGlib', '1.0')
++gi.require_version('Gdk', '3.0')
++gi.require_version('Gtk', '3.0')
++from gi.repository import PackageKitGlib as packagekit
+ from gi.repository import GObject, Gdk, Gtk, Gio, GLib
+ 
+ from .SimpleGtkbuilderApp import SimpleGtkbuilderApp
+@@ -51,6 +56,8 @@ import softwareproperties.distro
+ from softwareproperties.SoftwareProperties import SoftwareProperties
+ import softwareproperties.SoftwareProperties
+ 
++dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
++
+ try:
+     from UbuntuDrivers import detect
+ except ImportError as e:
+@@ -165,7 +172,7 @@ class SoftwarePropertiesGtk(SoftwareProperties, SimpleGtkbuilderApp):
+         self.handlers = {}
+ 
+         self.apt_cache = {}
+-        self.apt_client = client.AptClient()
++        self.pk_task = packagekit.Task()
+ 
+         # Put some life into the user interface:
+         self.init_auto_update()
+@@ -1033,7 +1040,7 @@ class SoftwarePropertiesGtk(SoftwareProperties, SimpleGtkbuilderApp):
+             if e._dbus_error_name == 'com.ubuntu.SoftwareProperties.PermissionDeniedByPolicy':
+                 logging.error("Authentication canceled, changes have not been saved")
+ 
+-    def on_driver_changes_progress(self, transaction, progress):
++    def on_driver_changes_progress(self, progress, ptype, data=None):
+         #print(progress)
+         self.button_driver_revert.set_visible(False)
+         self.button_driver_apply.set_visible(False)
+@@ -1043,30 +1050,30 @@ class SoftwarePropertiesGtk(SoftwareProperties, SimpleGtkbuilderApp):
+         self.progress_bar.set_visible(True)
+ 
+         self.label_driver_action.set_label(_("Applying changes..."))
+-        self.progress_bar.set_fraction(progress / 100.0)
+-
+-    def on_driver_changes_finish(self, transaction, exit_state):
+-        self.progress_bar.set_visible(False)
+-        self.clear_changes()
+-        self.apt_cache = apt.Cache()
+-        self.set_driver_action_status()
+-        self.update_label_and_icons_from_status()
+-        self.button_driver_revert.set_visible(True)
+-        self.button_driver_apply.set_visible(True)
+-        self.button_driver_cancel.set_visible(False)
+-        self.scrolled_window_drivers.set_sensitive(True)
+-
+-    def on_driver_changes_error(self, transaction, error_code, error_details):
+-        self.on_driver_changes_revert()
+-        self.set_driver_action_status()
+-        self.update_label_and_icons_from_status()
+-        self.button_driver_revert.set_visible(True)
+-        self.button_driver_apply.set_visible(True)
+-        self.button_driver_cancel.set_visible(False)
+-        self.scrolled_window_drivers.set_sensitive(True)
++        if ptype == packagekit.ProgressType.PERCENTAGE:
++            prog_value = progress.get_property('percentage')
++            self.progress_bar.set_fraction(prog_value / 100.0)
+ 
+-    def on_driver_changes_cancellable_changed(self, transaction, cancellable):
+-        self.button_driver_cancel.set_sensitive(cancellable)
++    def on_driver_changes_finish(self, source, result, installs_pending):
++        results = None
++        try:
++            results = self.pk_task.generic_finish(result)
++        except Exception as e:
++            self.on_driver_changes_revert()
++            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.ERROR,
++                Gtk.ButtonsType.CANCEL, _("Error while applying changes"))
++            dialog.format_secondary_text(str(e))
++            dialog.run()
++        if not installs_pending:
++            self.progress_bar.set_visible(False)
++            self.clear_changes()
++            self.apt_cache = apt.Cache()
++            self.set_driver_action_status()
++            self.update_label_and_icons_from_status()
++            self.button_driver_revert.set_visible(True)
++            self.button_driver_apply.set_visible(True)
++            self.button_driver_cancel.set_visible(False)
++            self.scrolled_window_drivers.set_sensitive(True)
+ 
+     def on_driver_changes_apply(self, button):
+ 
+@@ -1079,18 +1086,36 @@ class SoftwarePropertiesGtk(SoftwareProperties, SimpleGtkbuilderApp):
+             else:
+                 installs.append(pkg.shortname)
+ 
++        self.cancellable = Gio.Cancellable()
+         try:
+-            self.transaction = self.apt_client.commit_packages(install=installs, remove=removals,
+-                                                               reinstall=[], purge=[], upgrade=[], downgrade=[])
+-            self.transaction.connect("progress-changed", self.on_driver_changes_progress)
+-            self.transaction.connect("cancellable-changed", self.on_driver_changes_cancellable_changed)
+-            self.transaction.connect("finished", self.on_driver_changes_finish)
+-            self.transaction.connect("error", self.on_driver_changes_error)
+-            self.transaction.run()
++            if removals:
++                installs_pending = False
++                if installs:
++                    installs_pending = True
++                self.pk_task.reset()
++                self.pk_task.remove_packages_async(removals,
++                            False,  # allow deps
++                            True,  # autoremove
++                            self.cancellable,  # cancellable
++                            self.on_driver_changes_progress,
++                            None,  # progress data
++                            self.on_driver_changes_finish,  # callback ready
++                            installs_pending  # callback data
++                 )
++            if installs:
++                self.pk_task.reset()
++                task.install_packages_async(installs,
++                        self.cancellable,  # cancellable
++                        self.on_driver_changes_progress,
++                        None,  # progress data
++                        self.on_driver_changes_finish,  # GAsyncReadyCallback
++                        False  # ready data
++                 )
++
+             self.button_driver_revert.set_sensitive(False)
+             self.button_driver_apply.set_sensitive(False)
+             self.scrolled_window_drivers.set_sensitive(False)
+-        except (NotAuthorizedError, TransactionFailed) as e:
++        except Exception as e:
+             print("Warning: install transaction not completed successfully: {}".format(e))
+ 
+     def on_driver_changes_revert(self, button_revert=None):
+@@ -1110,7 +1135,7 @@ class SoftwarePropertiesGtk(SoftwareProperties, SimpleGtkbuilderApp):
+         self.button_driver_apply.set_sensitive(False)
+ 
+     def on_driver_changes_cancel(self, button_cancel):
+-        self.transaction.cancel()
++        self.cancellable.cancel()
+         self.clear_changes()
+ 
+     def on_driver_restart_clicked(self, button_restart):
+diff --git a/softwareproperties/kde/SoftwarePropertiesKDE.py b/softwareproperties/kde/SoftwarePropertiesKDE.py
+index d9ddee2..f31474c 100644
+--- a/softwareproperties/kde/SoftwarePropertiesKDE.py
++++ b/softwareproperties/kde/SoftwarePropertiesKDE.py
+@@ -30,7 +30,10 @@ import apt_pkg
+ import tempfile
+ from gettext import gettext as _
+ import os
+-import subprocess
++
++import gi
++gi.require_version('PackageKitGlib', '1.0')
++from gi.repository import PackageKitGlib as packagekit
+ 
+ from PyQt5 import uic
+ from PyQt5.QtCore import *
+@@ -694,6 +697,20 @@ class SoftwarePropertiesKDE(SoftwareProperties):
+     self.apt_key.update()
+     self.show_keys()
+ 
++  def on_pktask_progress(self, progress, ptype, udata=(None,)):
++    if ptype == packagekit.ProgressType.PERCENTAGE:
++      perc = progress.get_property('percentage')
++      self._pdialog.setValue(perc)
++
++  def on_pktask_finish(self, source, result, udata=(None,)):
++    results = None
++    try:
++        results = self._pktask.generic_finish(result)
++    except Exception as e:
++      QMessageBox.warning(self.userinterface, _("Could not refresh cache"), str(e))
++    self._pdialog.hide()
++    kapp.quit()
++
+   def on_close_button(self):
+     """Show a dialog that a reload of the channel information is required
+        only if there is no parent defined"""
+@@ -708,9 +725,34 @@ class SoftwarePropertiesKDE(SoftwareProperties):
+         messageBox.setText(text)
+         messageBox.exec_()
+         if (messageBox.clickedButton() == reloadButton):
+-                cmd = ["/usr/bin/qapt-batch", "--update"]
+-                subprocess.call(cmd)
+-    kapp.quit()
++                self._pdialog = QProgressDialog("<big>{}</big>".format(_("Refreshing software cache")),
++                                                "Cancel", 0, 100, self.userinterface)
++                self._pdialog.setWindowTitle(_("Cache Refresh"))
++                self._pdialog.setCancelButton(None)
++                self._pdialog.setAutoClose(False)
++                self._pdialog.setMinimumWidth(210)
++                self._pdialog.setMinimumHeight(60)
++
++                self._pktask = packagekit.Task()
++                self._pdialog.show()
++                self.userinterface.hide()
++                try:
++                    self._pktask.refresh_cache_async (False, # force
++                                                  None,  # GCancellable
++                                                  self.on_pktask_progress,
++                                                  (None,), # user data
++                                                  self.on_pktask_finish,
++                                                  (None,));
++                except Exception as e:
++                    print("Error while requesting cache refresh: {}".format (e))
++        else:
++            # refresh not wanted, quit immediately
++            kapp.quit()
++    else:
++        # no changes, no cache refresh needed.
++        # we can quit.
++        kapp.quit()
++
+ 
+   def on_button_add_cdrom_clicked(self):
+     '''Show a dialog that allows to add a repository located on a CDROM

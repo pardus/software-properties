@@ -1,0 +1,25 @@
+From: Matthias Klumpp <mak@debian.org>
+Date: Sun, 13 Mar 2016 15:23:05 +0100
+Subject: Fix typo in software-properties-drivers.desktop and have AppStream
+ ignore it
+
+---
+ data/software-properties-drivers.desktop.in | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/data/software-properties-drivers.desktop.in b/data/software-properties-drivers.desktop.in
+index 97f619d..ff43b20 100644
+--- a/data/software-properties-drivers.desktop.in
++++ b/data/software-properties-drivers.desktop.in
+@@ -4,9 +4,10 @@ Exec=/usr/bin/software-properties-gtk --open-tab=4
+ Icon=jockey
+ Terminal=false
+ Type=Application
+-NotShownIn=GNOME;Unity;KDE;
++NotShowIn=GNOME;Unity;KDE;
+ Categories=X-XFCE;GTK;Settings;HardwareSettings
+ Name=Additional Drivers
+ Name[es]=Controladores adicionales
+ Comment=Configure third-party and proprietary drivers
+ Comment[es]=Configure controladores privativos y de terceros
++X-AppStream-Ignore=true
