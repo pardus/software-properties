@@ -1,0 +1,21 @@
+From: Fatih Altun <fatih.altun@pardus.org.tr>
+Date: Wed, 16 Jun 2021 19:38:51 +0300
+Subject: software-properties-drivers NotShownIn XFCE too
+
+---
+ data/software-properties-drivers.desktop.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/software-properties-drivers.desktop.in b/data/software-properties-drivers.desktop.in
+index ff43b20..a15844e 100644
+--- a/data/software-properties-drivers.desktop.in
++++ b/data/software-properties-drivers.desktop.in
+@@ -4,7 +4,7 @@ Exec=/usr/bin/software-properties-gtk --open-tab=4
+ Icon=jockey
+ Terminal=false
+ Type=Application
+-NotShowIn=GNOME;Unity;KDE;
++NotShowIn=GNOME;Unity;KDE;XFCE;
+ Categories=X-XFCE;GTK;Settings;HardwareSettings
+ Name=Additional Drivers
+ Name[es]=Controladores adicionales
