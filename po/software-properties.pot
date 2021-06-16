@@ -1,0 +1,740 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: Sebastian Heinlein <sebi@glatzor.de>\n"
+"POT-Creation-Date: 2014-09-11 11:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ../data/com.ubuntu.softwareproperties.policy.in.h:1
+msgid "Write Configuration"
+msgstr ""
+
+#: ../data/com.ubuntu.softwareproperties.policy.in.h:2
+msgid "To change software repository settings, you need to authenticate."
+msgstr ""
+
+#: ../data/software-properties-gtk.desktop.in.h:1
+#: ../data/gtkbuilder/main.ui.h:14
+msgid "Software & Updates"
+msgstr ""
+
+#: ../data/software-properties-gtk.desktop.in.h:2
+#: ../data/software-properties-kde.desktop.in.h:2
+msgid "Configure the sources for installable software and updates"
+msgstr ""
+
+#: ../data/software-properties-gtk.desktop.in.h:3
+msgid "Drivers;Repositories;Repository;PPA;"
+msgstr ""
+
+#: ../data/software-properties-kde.desktop.in.h:1
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:653
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:672
+msgid "Software Sources"
+msgstr ""
+
+#: ../software-properties-gtk:97
+msgid ""
+"The --enable-component/-e command-line switch has been deprecated. Instead "
+"of 'software-properties-gtk -e multiverse' you can use \n"
+"'add-apt-repository multiverse'"
+msgstr ""
+
+#: ../add-apt-repository:59
+msgid "Print a lot of debug information to the command line"
+msgstr ""
+
+#: ../add-apt-repository:62
+msgid "remove repository from sources.list.d directory"
+msgstr ""
+
+#: ../add-apt-repository:65
+#, c-format
+msgid "URL of keyserver. Default: %default"
+msgstr ""
+
+#: ../add-apt-repository:68
+msgid "Allow downloading of the source packages from the repository"
+msgstr ""
+
+#: ../add-apt-repository:71
+msgid "Assume yes to all queries"
+msgstr ""
+
+#: ../add-apt-repository:75
+msgid "Error: must run as root"
+msgstr ""
+
+#: ../add-apt-repository:79
+msgid "Error: need a repository as argument"
+msgstr ""
+
+#: ../add-apt-repository:82
+msgid "Error: need a single repository as argument"
+msgstr ""
+
+#: ../add-apt-repository:102
+#, c-format
+msgid "'%s' distribution component disabled for all sources."
+msgstr ""
+
+#: ../add-apt-repository:104
+#, c-format
+msgid "'%s' distribution component is already disabled for all sources."
+msgstr ""
+
+#: ../add-apt-repository:109
+#, c-format
+msgid "'%s' distribution component enabled for all sources."
+msgstr ""
+
+#: ../add-apt-repository:111
+#, c-format
+msgid "'%s' distribution component is already enabled for all sources."
+msgstr ""
+
+#: ../add-apt-repository:133
+#, c-format
+msgid " More info: %s"
+msgstr ""
+
+#: ../add-apt-repository:137
+msgid "Press [ENTER] to continue or ctrl-c to cancel removing it"
+msgstr ""
+
+#: ../add-apt-repository:139
+msgid "Press [ENTER] to continue or ctrl-c to cancel adding it"
+msgstr ""
+
+#: ../add-apt-repository:156 ../add-apt-repository:160
+#, c-format
+msgid "Error: '%s' doesn't exist in a sourcelist file"
+msgstr ""
+
+#: ../add-apt-repository:165
+#, c-format
+msgid "Error: '%s' invalid"
+msgstr ""
+
+#: ../softwareproperties/distro.py:28
+msgid ""
+"<i>To improve the user experience of Ubuntu please take part in the "
+"popularity contest. If you do so the list of installed software and how "
+"often it was used will be collected and sent anonymously to the Ubuntu "
+"project on a weekly basis.\n"
+"\n"
+"The results are used to improve the support for popular applications and to "
+"rank applications in the search results.</i>"
+msgstr ""
+
+#: ../softwareproperties/distro.py:37
+msgid ""
+"<i>To improve the user experiece of Debian please take part in the "
+"popularity contest. If you do so the list of installed software and how "
+"often it was used will be collected and sent anonymously to the Debian "
+"project.\n"
+"\n"
+"The results are used to optimise the layout of the installation CDs."
+msgstr ""
+
+#: ../softwareproperties/distro.py:44
+msgid ""
+"Submit the list of installed software and how often it is is used to the "
+"distribution project."
+msgstr ""
+
+#: ../softwareproperties/kde/DialogMirror.py:57
+msgid "Mirror"
+msgstr ""
+
+#: ../softwareproperties/kde/DialogMirror.py:179
+#: ../softwareproperties/kde/DialogMirror.py:180
+#: ../softwareproperties/kde/DialogMirror.py:213
+msgid "Testing Mirrors"
+msgstr ""
+
+#: ../softwareproperties/kde/DialogMirror.py:179
+#: ../softwareproperties/kde/DialogMirror.py:182
+msgid "Cancel"
+msgstr ""
+
+#: ../softwareproperties/kde/DialogMirror.py:214
+#: ../softwareproperties/gtk/DialogMirror.py:332
+msgid "No suitable download server was found"
+msgstr ""
+
+#: ../softwareproperties/kde/DialogMirror.py:215
+#: ../softwareproperties/gtk/DialogMirror.py:333
+msgid "Please check your Internet connection."
+msgstr ""
+
+#: ../softwareproperties/kde/DialogMirror.py:230
+#: ../softwareproperties/gtk/DialogMirror.py:348
+msgid "Canceling..."
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:164
+#: ../data/gtkbuilder/main.ui.h:9
+msgid "Daily"
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:165
+#: ../data/gtkbuilder/main.ui.h:10
+msgid "Every two days"
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:166
+#: ../data/gtkbuilder/main.ui.h:11
+msgid "Weekly"
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:167
+#: ../data/gtkbuilder/main.ui.h:12
+msgid "Every two weeks"
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:174
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:241
+#, python-format
+msgid "Every %s days"
+msgstr ""
+
+#. TRANS: %s stands for the distribution name e.g. Debian or Ubuntu
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:216
+#, python-format
+msgid "%s updates"
+msgstr ""
+
+#. TRANS: %s stands for the distribution name e.g. Debian or Ubuntu
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:220
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:301
+#, python-format
+msgid "%s Software"
+msgstr ""
+
+#. TRANSLATORS: Label for the components in the Internet section
+#. first %s is the description of the component
+#. second %s is the code name of the comp, eg main, universe
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:239
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:314
+#, python-format
+msgid "%s (%s)"
+msgstr ""
+
+#. add a separator and the option to choose another mirror from the list
+#. #FIXME server_store.append(["sep", None, True])
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:302
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:429
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:522
+msgid "Other..."
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:672
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:942
+msgid "Import key"
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:675
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:956
+msgid "Error importing selected file"
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:676
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:957
+msgid "The selected file may not be a GPG key file or it might be corrupt."
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:688
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:973
+msgid "Error removing the key"
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:689
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:974
+msgid "The key you selected could not be removed. Please report this as a bug."
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:705
+msgid "Reload"
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:707
+#: ../data/gtkbuilder/dialog-cache-outofdate.ui.h:2
+msgid ""
+"<b><big>The information about available software is out-of-date</big></b>\n"
+"\n"
+"To install software and updates from newly added or changed sources, you "
+"have to reload the information about available software.\n"
+"\n"
+"You need a working internet connection to continue."
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:736
+msgid "CD Error"
+msgstr ""
+
+#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:737
+#, python-format
+msgid ""
+"<big><b>Error scanning the CD</b></big>\n"
+"\n"
+"%s"
+msgstr ""
+
+#: ../softwareproperties/kde/CdromProgress.py:54
+msgid "CD Name"
+msgstr ""
+
+#: ../softwareproperties/kde/CdromProgress.py:54
+#: ../softwareproperties/gtk/CdromProgress.py:59
+msgid "Please enter a name for the disc"
+msgstr ""
+
+#: ../softwareproperties/kde/CdromProgress.py:58
+msgid "Insert Disk"
+msgstr ""
+
+#: ../softwareproperties/kde/CdromProgress.py:58
+#: ../softwareproperties/gtk/CdromProgress.py:75
+msgid "Please insert a disk in the drive:"
+msgstr ""
+
+#. L10N: the example is of the format: deb http://ftp.debian.org sarge main
+#: ../softwareproperties/kde/DialogAdd.py:55
+#: ../data/gtkbuilder/dialog-add.ui.h:1
+msgid ""
+"<big><b>Enter the complete APT line of the repository that you want to add "
+"as source</b></big>"
+msgstr ""
+
+#. L10N: the example is of the format: deb http://ftp.debian.org sarge main
+#: ../softwareproperties/kde/DialogAdd.py:57
+#: ../softwareproperties/gtk/DialogAdd.py:62
+#, python-format
+msgid ""
+"The APT line includes the type, location and components of a repository, for "
+"example  '%s'."
+msgstr ""
+
+#: ../softwareproperties/kde/DialogEdit.py:43
+#: ../data/gtkbuilder/dialog-edit-source.ui.h:1
+msgid "Binary"
+msgstr ""
+
+#: ../softwareproperties/kde/DialogEdit.py:44 ../data/gtkbuilder/main.ui.h:15
+msgid "Source code"
+msgstr ""
+
+#: ../softwareproperties/SoftwareProperties.py:502
+#: ../softwareproperties/SoftwareProperties.py:509
+msgid "(Source Code)"
+msgstr ""
+
+#: ../softwareproperties/SoftwareProperties.py:515
+msgid "Source Code"
+msgstr ""
+
+#: ../softwareproperties/gtk/DialogMirror.py:248
+msgid "New mirror"
+msgstr ""
+
+#: ../softwareproperties/gtk/DialogMirror.py:321
+#, python-format
+msgid "Completed %s of %s tests"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:663
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:682
+msgid "Active"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:721
+msgid "Key"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:738
+msgid "_Add key from paste data"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:751
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:762
+msgid "Error importing key"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:752
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:763
+msgid "The selected data may not be a GPG key file or it might be corrupt."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:808
+msgid "Error scanning the CD"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:809
+msgid "Could not find a suitable CD."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1019
+msgid "Applying changes..."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1100
+#: ../data/gtkbuilder/main.ui.h:40
+msgid "Re_vert"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1102
+msgid "_Apply Changes"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1104
+msgid "_Cancel"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1106
+msgid "_Restart..."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1121
+msgid "Searching for available drivers..."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1151
+msgid "An error occurred while searching for drivers."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1223
+msgid "This device is using the recommended driver."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1224
+msgid "This device is using an alternative driver."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1225
+msgid "This device is using a manually-installed driver."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1226
+msgid "This device is not working."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1235
+msgid "Continue using a manually installed driver"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1262
+msgid "Using {} from {}"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1264
+msgid "Using {}"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1271
+msgid "open source"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1273
+msgid "proprietary"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1276
+#, python-brace-format
+msgid "{base_description} ({licence}, tested)"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1278
+#, python-brace-format
+msgid "{base_description} ({licence})"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1298
+msgid "Do not use the device"
+msgstr ""
+
+#. No drivers found.
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1318
+msgid "No additional drivers available."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1336
+msgid "Unknown"
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1385
+msgid "You need to restart the computer to complete the driver changes."
+msgstr ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1399
+#, python-format
+msgid "%(count)d proprietary driver in use."
+msgid_plural "%(count)d proprietary drivers in use."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1404
+#: ../data/gtkbuilder/main.ui.h:37
+msgid "No proprietary drivers are in use."
+msgstr ""
+
+#: ../softwareproperties/gtk/DialogAddSourcesList.py:43
+msgid "Add Software Channels"
+msgstr ""
+
+#: ../softwareproperties/gtk/DialogAddSourcesList.py:84
+msgid "Install software additionally or only from this source?"
+msgid_plural "Install software additionally or only from these sources?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../softwareproperties/gtk/DialogAddSourcesList.py:89
+msgid ""
+"You can either add the following sources or replace your current sources by "
+"them. Only install software from trusted sources."
+msgstr ""
+
+#: ../softwareproperties/gtk/DialogAddSourcesList.py:104
+msgid "There are no sources to install software from"
+msgstr ""
+
+#: ../softwareproperties/gtk/DialogAddSourcesList.py:105
+#, python-format
+msgid "The file '%s' does not contain any valid software sources."
+msgstr ""
+
+#. some known keys
+#: ../softwareproperties/AptAuth.py:39
+msgid "Ubuntu Archive Automatic Signing Key <ftpmaster@ubuntu.com>"
+msgstr ""
+
+#: ../softwareproperties/AptAuth.py:40
+msgid "Ubuntu CD Image Automatic Signing Key <cdimage@ubuntu.com>"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-edit-source.ui.h:2
+msgid "Source"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-edit-source.ui.h:3
+msgid "Edit Source"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-edit-source.ui.h:4
+msgid "<b>Type:</b>"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-edit-source.ui.h:5
+msgid "<b>URI:</b>"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-edit-source.ui.h:6
+msgid "<b>Distribution:</b>"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-edit-source.ui.h:7
+msgid "<b>Components:</b>"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-edit-source.ui.h:8
+msgid "<b>Comment:</b>"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-add-sources-list.ui.h:1
+msgid "_Replace"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-cdrom-progress.ui.h:1
+msgid "Scanning CD-ROM"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:1
+msgid "Display immediately"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:2
+msgid "Display weekly"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:3
+msgid "Display every two weeks"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:4
+msgid "For any new version"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:5
+msgid "For long-term support versions"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:6
+msgid "Never"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:7
+msgid "Download automatically"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:8
+msgid "Download and install automatically"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:13
+msgid "To install from a CD-ROM or DVD, insert the medium into the drive."
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:16
+msgid "Download from:"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:17
+msgid "<b>Downloadable from the Internet</b>"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:18
+msgid "<b>Installable from CD-ROM/DVD</b>"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:19
+msgid "Add..."
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:20
+msgid "Edit..."
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:21
+msgid "Add Volume..."
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:22
+msgid "Other Software"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:23
+msgid "Install updates from:"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:24
+msgid "Automatically check for updates:"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:25
+msgid "When there are security updates:"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:26
+msgid "When there are other updates:"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:27
+msgid "Notify me of a new Ubuntu version:"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:28
+msgid "Updates"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:29
+msgid "<b>Trusted software providers</b>"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:30
+msgid "    "
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:31
+msgid ""
+"Keys are used to authenticate the correct source of software and so protect "
+"your computer from malicious software"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:32
+msgid "_Import Key File..."
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:33
+msgid "Import the public key from a trusted software provider"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:34
+msgid "Restore _Defaults"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:35
+msgid "Restore the default keys of your distribution"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:36
+msgid "Authentication"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:38
+msgid ""
+"<small>A proprietary driver has private code that Ubuntu developers can't "
+"review or improve. Security and other updates are dependent on the driver "
+"vendor.</small>"
+msgstr ""
+
+#: ../data/gtkbuilder/main.ui.h:39
+msgid "Additional Drivers"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-cache-outofdate.ui.h:1
+#: ../data/gtkbuilder/dialog-mirror.ui.h:6
+msgid " "
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-cache-outofdate.ui.h:7
+msgid "_Reload"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-mirror.ui.h:1
+msgid "Choose a Download Server"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-mirror.ui.h:2
+msgid "Protocol:"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-mirror.ui.h:3
+msgid "_Select Best Server"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-mirror.ui.h:4
+msgid "Performs a connection test to find the best mirror for your location"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-mirror.ui.h:5
+msgid "Choose _Server"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-mirror.ui.h:7
+msgid ""
+"<b><big>Testing download servers</big></b>\n"
+"\n"
+"A series of tests will be performed to find the best mirror for your "
+"location."
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-add.ui.h:2
+msgid "APT line:"
+msgstr ""
+
+#: ../data/gtkbuilder/dialog-add.ui.h:3
+msgid "_Add Source"
+msgstr ""
