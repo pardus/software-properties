@@ -1,7 +1,7 @@
 Source: software-properties
 Section: admin
 Priority: optional
-Maintainer: Julian Andres Klode <jak@debian.org>
+Maintainer: Fatih Altun <fatih.altun@pardus.org.tr>
 Build-Depends: debhelper (>= 9),
                intltool,
                dh-python,
