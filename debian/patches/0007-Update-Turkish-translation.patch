@@ -1,0 +1,532 @@
+From: Fatih Altun <fatih.altun@pardus.org.tr>
+Date: Wed, 16 Jun 2021 19:15:27 +0300
+Subject: Update Turkish translation
+
+---
+ po/tr.po | 174 +++++++++++++++++++++++++++++++--------------------------------
+ 1 file changed, 85 insertions(+), 89 deletions(-)
+
+diff --git a/po/tr.po b/po/tr.po
+index fac7111..629ed20 100644
+--- a/po/tr.po
++++ b/po/tr.po
+@@ -2,20 +2,22 @@
+ # Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+ # This file is distributed under the same license as the update-manager package.
+ # FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
++# Fatih Altun <fatih.altun@pardus.org.tr>, 2021.
+ #
+-#, fuzzy
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: update-manager\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2009-08-28 12:48-0400\n"
+-"PO-Revision-Date: 2006-10-21 20:58+0000\n"
+-"Last-Translator: Atilla Karaman <atillakaraman@gmail.com>\n"
+-"Language-Team: Turkish <tr@li.org>\n"
++"PO-Revision-Date: 2021-06-16 19:12+0300\n"
++"Last-Translator: Fatih Altun <fatih.altun@pardus.org.tr>\n"
++"Language-Team: Turkish <gelistirici@pardus.org.tr>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "Plural-Forms: nplurals=1; plural=0\n"
++"Language: tr\n"
++"X-Generator: Gtranslator 3.38.0\n"
+ 
+ #: ../data/software-properties.desktop.in.h:1
+ msgid "Configure the sources for installable software and updates"
+@@ -30,23 +32,22 @@ msgstr "Yazılım Kaynakları"
+ 
+ #: ../software-properties-gtk:82
+ msgid "You need to be root to run this program"
+-msgstr ""
++msgstr "Bu programı çalıştırmak için yetkili olmanız gerekir"
+ 
+ #: ../add-apt-repository:18
+ msgid "Error: must run as root"
+-msgstr ""
++msgstr "Hata: yönetici hakları ile çalıştırılmalı"
+ 
+ #: ../add-apt-repository:22
+ msgid "Error: need a repository as argument"
+-msgstr ""
++msgstr "Hata: argüman olarak bir depo gerekli"
+ 
+ #: ../add-apt-repository:31
+ #, c-format
+ msgid "Error: '%s' invalid"
+-msgstr ""
++msgstr "Hata: '%s' geçersiz"
+ 
+ #: ../softwareproperties/distro.py:28
+-#, fuzzy
+ msgid ""
+ "<i>To improve the user experience of Ubuntu please take part in the "
+ "popularity contest. If you do so the list of installed software and how "
+@@ -56,16 +57,15 @@ msgid ""
+ "The results are used to improve the support for popular applications and to "
+ "rank applications in the search results.</i>"
+ msgstr ""
+-"<i>Kullanıcıların Ubuntu deneyimini iyileştirmek için lütfen popülerlik "
++"<i>Kullanıcıların Pardus deneyimini iyileştirmek için lütfen popülerlik "
+ "yarışmasına katılın. Eğer katılırsanız, herhangi kişisel bir bilgi "
+ "içermeyecek şekilde kurulu olan yazılımlar ve bunların kullanım sıklığı "
+-"haftalık olarak Ubuntu projesine bildirilecektir.\n"
++"haftalık olarak Pardus projesine bildirilecektir.\n"
+ "\n"
+ "Sonuçlar popüler olan uygulamalara verilen desteğin geliştirilmesinde ve "
+ "arama sonuçlarındaki sıralamanın belirlenmesinde kullanılacaktır.</i>"
+ 
+ #: ../softwareproperties/distro.py:37
+-#, fuzzy
+ msgid ""
+ "<i>To improve the user experiece of Debian please take part in the "
+ "popularity contest. If you do so the list of installed software and how "
+@@ -74,34 +74,34 @@ msgid ""
+ "\n"
+ "The results are used to optimise the layout of the installation CDs."
+ msgstr ""
+-"<i>Kullanıcıların Ubuntu deneyimini iyileştirmek için lütfen popülerlik "
+-"yarışmasına katılın. Eğer katılırsanız, herhangi kişisel bir bilgi "
+-"içermeyecek şekilde kurulu olan yazılımlar ve bunların kullanım sıklığı "
+-"haftalık olarak Ubuntu projesine bildirilecektir.\n"
++"<i>Kullanıcıların Pardus deneyimini iyileştirmek için lütfen kullanım "
++"yaygınlığı yarışmasına katılın. Eğer katılırsanız, herhangi bir kişisel "
++"bilgi içermeyecek şekilde kurulu olan yazılımlar ve bunların kullanım "
++"sıklığı haftalık olarak Pardus projesine bildirilecektir.\n"
+ "\n"
+-"Sonuçlar popüler olan uygulamalara verilen desteğin geliştirilmesinde ve "
+-"arama sonuçlarındaki sıralamanın belirlenmesinde kullanılacaktır.</i>"
++"Sonuçlar kurulum CD'lerinin şekillenmesinde kullanılacaktır.</i>"
+ 
+ #: ../softwareproperties/distro.py:44
+ msgid ""
+ "Submit the list of installed software and how often it is is used to the "
+ "distribution project."
+ msgstr ""
++"Kurulu yazılımların listesini ve ne sıklıkla kullanıldıklarını dağıtım "
++"projesine gönder."
+ 
+ #: ../softwareproperties/kde/DialogMirror.py:68
+ msgid "Mirror"
+-msgstr ""
++msgstr "Yansı"
+ 
+ #: ../softwareproperties/kde/DialogMirror.py:214
+ #: ../softwareproperties/kde/DialogMirror.py:215
+ msgid "Testing Mirrors"
+-msgstr ""
++msgstr "Yansılar Sınanıyor"
+ 
+ #: ../softwareproperties/kde/DialogMirror.py:214
+ #: ../softwareproperties/kde/DialogMirror.py:217
+-#, fuzzy
+ msgid "Cancel"
+-msgstr "Değişiklikler"
++msgstr "İptal"
+ 
+ #. update_days = apt_pkg.Config.FindI(softwareproperties.CONF_MAP["autoupdate"])
+ #: ../softwareproperties/kde/SoftwarePropertiesKDE.py:193
+@@ -140,9 +140,9 @@ msgstr "%s güncellemeleri"
+ #. TRANS: %s stands for the distribution name e.g. Debian or Ubuntu
+ #: ../softwareproperties/kde/SoftwarePropertiesKDE.py:249
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:258
+-#, fuzzy, python-format
++#, python-format
+ msgid "%s Software"
+-msgstr "Kısıtlı yazılımlar"
++msgstr "%s Kaynakları"
+ 
+ #. TRANSLATORS: Label for the components in the Internet section
+ #. first %s is the description of the component
+@@ -160,7 +160,7 @@ msgstr "%s (%s)"
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:384
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:441
+ msgid "Other..."
+-msgstr ""
++msgstr "Diğer..."
+ 
+ #. L10N: the example is of the format: deb http://ftp.debian.org sarge main
+ #: ../softwareproperties/kde/SoftwarePropertiesKDE.py:653
+@@ -170,10 +170,13 @@ msgid ""
+ "add as source</b></p><p>The APT line includes the type, location and "
+ "components of a repository,<br /> for example <i>\"%s\"</i>.</p>"
+ msgstr ""
++"<p><b>Tam APT satırını girin<br /> kaynak olarak eklemek istediğiniz "
++"deponun</b></p><p>APT satırı, bir deponun türünü, konumunu ve bileşenlerini "
++"içerir.,<br /> örneğin <i>\"%s\"</i>.</p>"
+ 
+ #: ../softwareproperties/kde/SoftwarePropertiesKDE.py:654
+ msgid "Add APT repository"
+-msgstr ""
++msgstr "APT deposu ekle"
+ 
+ #: ../softwareproperties/kde/SoftwarePropertiesKDE.py:695
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:807
+@@ -205,9 +208,8 @@ msgid "The key you selected could not be removed. Please report this as a bug."
+ msgstr "Seçtiğiniz anahtar kaldırılamadı. Lütfen bunu bir hata olarak iletin."
+ 
+ #: ../softwareproperties/kde/SoftwarePropertiesKDE.py:730
+-#, fuzzy
+ msgid "Reload"
+-msgstr "_Yenile"
++msgstr "Tekrar Yükle"
+ 
+ #: ../softwareproperties/kde/SoftwarePropertiesKDE.py:732
+ #: ../data/glade/dialogs.glade.h:4
+@@ -228,10 +230,10 @@ msgstr ""
+ 
+ #: ../softwareproperties/kde/SoftwarePropertiesKDE.py:762
+ msgid "CD Error"
+-msgstr ""
++msgstr "CD Hatası"
+ 
+ #: ../softwareproperties/kde/SoftwarePropertiesKDE.py:763
+-#, fuzzy, python-format
++#, python-format
+ msgid ""
+ "<big><b>Error scanning the CD</b></big>\n"
+ "\n"
+@@ -243,7 +245,7 @@ msgstr ""
+ 
+ #: ../softwareproperties/kde/CdromProgress.py:51
+ msgid "CD Name"
+-msgstr ""
++msgstr "CD Adı"
+ 
+ #: ../softwareproperties/kde/CdromProgress.py:51
+ #: ../softwareproperties/gtk/CdromProgress.py:58
+@@ -252,20 +254,16 @@ msgstr "Lütfen disk için bir isim girin"
+ 
+ #: ../softwareproperties/kde/CdromProgress.py:55
+ msgid "Insert Disk"
+-msgstr ""
++msgstr "Disk Yerleştir"
+ 
+ #: ../softwareproperties/kde/CdromProgress.py:55
+ #: ../softwareproperties/gtk/CdromProgress.py:74
+-#, fuzzy
+ msgid "Please insert a disk in the drive:"
+ msgstr "Lütfen sürücüye bir disk yerleştirin:"
+ 
+ #: ../softwareproperties/kde/DialogEdit.py:40
+-#, fuzzy
+ msgid "Binary"
+-msgstr ""
+-"İkili\n"
+-"Kaynak"
++msgstr "İkili"
+ 
+ #: ../softwareproperties/kde/DialogEdit.py:41 ../data/glade/main.glade.h:25
+ msgid "Source code"
+@@ -281,25 +279,24 @@ msgstr "Kaynak Kodu"
+ 
+ #: ../softwareproperties/gtk/DialogMirror.py:244
+ msgid "New mirror"
+-msgstr ""
++msgstr "Yeni yansı"
+ 
+ #: ../softwareproperties/gtk/DialogMirror.py:302
+ #, python-format
+ msgid "Completed %s of %s tests"
+-msgstr ""
++msgstr "Tamamlanan: %s | Toplam: %s"
+ 
+ #: ../softwareproperties/gtk/DialogMirror.py:355
+ msgid "No suitable download server was found"
+-msgstr ""
++msgstr "Uygun herhangi bir indirme sunucusu bulunamadı"
+ 
+ #: ../softwareproperties/gtk/DialogMirror.py:356
+-#, fuzzy
+ msgid "Please check your Internet connection."
+-msgstr "İnternet bağlantınızı kontrol ediniz."
++msgstr "Lütfen internet bağlantınızı kontrol edin."
+ 
+ #: ../softwareproperties/gtk/DialogMirror.py:372
+ msgid "Canceling..."
+-msgstr ""
++msgstr "İptal ediliyor..."
+ 
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:560
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:580
+@@ -308,68 +305,64 @@ msgstr "Etkin"
+ 
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:631
+ msgid "_Add key from paste data"
+-msgstr ""
++msgstr "Yapıştırma verisinden _anahtar ekle"
+ 
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:644
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:655
+-#, fuzzy
+ msgid "Error importing key"
+-msgstr "Anahtar kaldırmada hata"
++msgstr "Anaktar eklerken hata oluştu"
+ 
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:645
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:656
+-#, fuzzy
+ msgid "The selected data may not be a GPG key file or it might be corrupt."
+-msgstr "Seçili dosya bir GPG anahtar dosyası olmayabilir veya bozuk olabilir."
++msgstr "Seçilen veri, GPG anahtarı değil ya da bozulmuş olabilir."
+ 
+ #: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:875
+-#, fuzzy
+ msgid "Error scanning the CD"
+-msgstr ""
+-"<big><b>CD taramada hata</b></big>\n"
+-"\n"
+-"%s"
++msgstr "CD taranırken hata oluştu"
+ 
+ #. some known keys
+ #: ../softwareproperties/gtk/DialogAptKey.py:37
+ #: ../softwareproperties/AptAuth.py:33
+ msgid "Ubuntu Archive Automatic Signing Key <ftpmaster@ubuntu.com>"
+ msgstr ""
++"Pardus Arşivi Kendiliğinden İmzalı Anahtarı <gelistirici@pardus.org.tr>"
+ 
+ #: ../softwareproperties/gtk/DialogAptKey.py:38
+ #: ../softwareproperties/AptAuth.py:34
+ msgid "Ubuntu CD Image Automatic Signing Key <cdimage@ubuntu.com>"
+ msgstr ""
++"Pardus CD Görüntüsü Kendiliğinden İmzalı Anahtarı <cdimage@pardus.org.tr>"
+ 
+ #: ../softwareproperties/gtk/DialogAptKey.py:78
+ msgid "Choose a key-file"
+-msgstr ""
++msgstr "Bir anahtar dosyası seçin"
+ 
+ #: ../softwareproperties/gtk/DialogAddSourcesList.py:39
+-#, fuzzy
+ msgid "Add Software Channels"
+-msgstr "Yazılım Kanalı"
++msgstr "Yazılım Kanalı Ekle"
+ 
+ #: ../softwareproperties/gtk/DialogAddSourcesList.py:80
+ msgid "Install software additionally or only from this source?"
+ msgid_plural "Install software additionally or only from these sources?"
+-msgstr[0] ""
++msgstr[0] "Yazılım ek olarak mı yoksa bu kaynaktan mı yüklensin?"
+ 
+ #: ../softwareproperties/gtk/DialogAddSourcesList.py:85
+ msgid ""
+ "You can either add the following sources or replace your current sources by "
+ "them. Only install software from trusted sources."
+ msgstr ""
++"Aşağıdaki kaynakları ekleyebilir ya da geçerli kaynaklarınızı onlarla "
++"değiştirebilirsiniz. Sadece güvenilir kaynaklardan yazılım yükleyin."
+ 
+ #: ../softwareproperties/gtk/DialogAddSourcesList.py:100
+-#, fuzzy
+ msgid "There are no sources to install software from"
+-msgstr "Kurulabilir yazılım ve güncellemeler için kaynakları yapılandır"
++msgstr "Yazılımı kurmak için hiç kaynak yok"
+ 
+ #: ../softwareproperties/gtk/DialogAddSourcesList.py:101
+ #, python-format
+ msgid "The file '%s' does not contain any valid software sources."
+-msgstr ""
++msgstr "'%s' dosyası geçerli hiçbir yazılım kaynağı içermiyor."
+ 
+ #. L10N: the example is of the format: deb http://ftp.debian.org sarge main
+ #: ../softwareproperties/gtk/DialogAdd.py:60
+@@ -378,6 +371,7 @@ msgid ""
+ "The APT line includes the type, location and components of a repository, for "
+ "example  '%s'."
+ msgstr ""
++"APT satırı, deponun türünü, konumunu ve bileşenlerini içerir. Örneğin '%s'."
+ 
+ #: ../data/glade/main.glade.h:1
+ msgid "    "
+@@ -389,38 +383,35 @@ msgstr "<b>Otomatik güncelleme</b>"
+ 
+ #: ../data/glade/main.glade.h:3
+ msgid "<b>Downloadable from the Internet</b>"
+-msgstr ""
++msgstr "<b>İnternetten İndirilebilir</b>"
+ 
+ #: ../data/glade/main.glade.h:4
+-#, fuzzy
+ msgid "<b>Installable from CD-ROM/DVD</b>"
+-msgstr "<b>CDROM/DVD</b>"
++msgstr "<b>DVD/CDROM'dan Kurulabilir</b>"
+ 
+ #: ../data/glade/main.glade.h:5
+-#, fuzzy
+ msgid "<b>Release upgrade</b>"
+-msgstr "İnternet güncellemeleri"
++msgstr "<b>Güvenilir yazılım sağlayıcıları</b>"
+ 
+ #: ../data/glade/main.glade.h:6
+ msgid "<b>Trusted software providers</b>"
+-msgstr ""
++msgstr "<b>Güvenilir yazılım sağlayıcıları</b>"
+ 
+ #: ../data/glade/main.glade.h:7
+ msgid "Add CD-ROM..."
+-msgstr ""
++msgstr "CD-ROM ekleyin..."
+ 
+ #: ../data/glade/main.glade.h:8
+ msgid "Add..."
+-msgstr ""
++msgstr "Ekle..."
+ 
+ #: ../data/glade/main.glade.h:9
+ msgid "Authentication"
+ msgstr "Kimlik Sınaması"
+ 
+ #: ../data/glade/main.glade.h:10
+-#, fuzzy
+ msgid "Chec_k for updates:"
+-msgstr "Güncellemeler denetleniyor"
++msgstr "_Güncellemeleri kontrol et:"
+ 
+ #: ../data/glade/main.glade.h:11
+ msgid "Download from:"
+@@ -428,14 +419,13 @@ msgstr "İndirme adresi:"
+ 
+ #: ../data/glade/main.glade.h:12
+ msgid "Edit..."
+-msgstr ""
++msgstr "Düzenle..."
+ 
+ #: ../data/glade/main.glade.h:13
+ msgid "Import the public key from a trusted software provider"
+ msgstr "Güvenilen bir yazılm sağlayıcısından açık anahtarı içe aktar"
+ 
+ #: ../data/glade/main.glade.h:14
+-#, fuzzy
+ msgid "Install _security updates without confirmation"
+ msgstr "_Onaylatmadan güvenlik güncellemelerini kur"
+ 
+@@ -444,6 +434,8 @@ msgid ""
+ "Keys are used to authenticate the correct source of software and so protect "
+ "your computer from malicious software"
+ msgstr ""
++"Anahtarlar, yazılım kaynaklarının doğrulanması için kullanılır ve böylece "
++"bilgisayarınız kötü niyetli yazılımlardan korunur"
+ 
+ #: ../data/glade/main.glade.h:16
+ msgid ""
+@@ -451,16 +443,17 @@ msgid ""
+ "Normal releases\n"
+ "Long term support releases only"
+ msgstr ""
++"Asla\n"
++"Normal sürümler\n"
++"Yalnızca uzun vadeli destek sürümleri"
+ 
+ #: ../data/glade/main.glade.h:19
+-#, fuzzy
+ msgid "Only _notify about available updates"
+-msgstr "Bulunan güncelleştirmeleri göster ve kur"
++msgstr "Yalnızca mevcut güncellemeler hakkında _bilgilendir"
+ 
+ #: ../data/glade/main.glade.h:20
+-#, fuzzy
+ msgid "Other Software"
+-msgstr "Kısıtlı yazılımlar"
++msgstr "Diğer Kaynaklar"
+ 
+ #: ../data/glade/main.glade.h:21
+ msgid "Restore _Defaults"
+@@ -471,9 +464,8 @@ msgid "Restore the default keys of your distribution"
+ msgstr "Dağıtımınızın öntanımlı anahtarlarını geriye döndür"
+ 
+ #: ../data/glade/main.glade.h:23
+-#, fuzzy
+ msgid "Show new distribution releases: "
+-msgstr "Yeni dağıtım yayımları için kontrol et"
++msgstr "Yeni dağıtım sürümlerini göster:"
+ 
+ #: ../data/glade/main.glade.h:26
+ msgid "Statistics"
+@@ -485,21 +477,19 @@ msgstr "İstatistiki Bilgileri Bildir"
+ 
+ #: ../data/glade/main.glade.h:28
+ msgid "To install from a CD-ROM or DVD, insert the medium into the drive."
+-msgstr ""
++msgstr "Bir CD-ROM ya da DVD'den kurmak için sürücü içine ortamı yerleştirin."
+ 
+ #: ../data/glade/main.glade.h:29
+-#, fuzzy
+ msgid "Updates"
+-msgstr "güncellemeler"
++msgstr "Güncellemeler"
+ 
+ #: ../data/glade/main.glade.h:30
+ msgid "_Download all updates in the background"
+-msgstr ""
++msgstr "Arka planda tüm güncellemeleri _indir"
+ 
+ #: ../data/glade/main.glade.h:31
+-#, fuzzy
+ msgid "_Import Key File..."
+-msgstr "İçe Anahtar Dosyası _Aktar"
++msgstr "Anahtar Dosyayı İçe _Aktar..."
+ 
+ #: ../data/glade/dialogs.glade.h:1
+ msgid ""
+@@ -507,6 +497,9 @@ msgid ""
+ "\n"
+ "A series of tests will be done to find the best mirror for your location."
+ msgstr ""
++"<b><big>İndirme sunucuları deneniyor</big></b>\n"
++"\n"
++"Konumunuza en uygun sunucuyu bulmak için birkaç deneme yapılacak."
+ 
+ #: ../data/glade/dialogs.glade.h:9
+ msgid "<b>Comment:</b>"
+@@ -533,6 +526,8 @@ msgid ""
+ "<big><b>Enter the complete APT line of the repository that you want to add "
+ "as source</b></big>"
+ msgstr ""
++"<big><b>Kaynak olarak eklemek istediğiniz deponun tam APT satırını girin</"
++"b></big>"
+ 
+ #: ../data/glade/dialogs.glade.h:15
+ msgid "APT line:"
+@@ -548,11 +543,11 @@ msgstr ""
+ 
+ #: ../data/glade/dialogs.glade.h:18
+ msgid "Choose _Server"
+-msgstr ""
++msgstr "Sunucu _Seç"
+ 
+ #: ../data/glade/dialogs.glade.h:19
+ msgid "Choose a Download Server"
+-msgstr ""
++msgstr "Bir İndirme Sunucusu Seç"
+ 
+ #: ../data/glade/dialogs.glade.h:20
+ msgid "Edit Source"
+@@ -561,10 +556,12 @@ msgstr "Kaynak Düzenleme"
+ #: ../data/glade/dialogs.glade.h:21
+ msgid "Performs a connection test to find the best mirror for your location"
+ msgstr ""
++"Konumunuz için en iyi yansıyı belirlemek amacıyla bir bağlantı sınaması "
++"gerçekleştirir"
+ 
+ #: ../data/glade/dialogs.glade.h:22
+ msgid "Protocol:"
+-msgstr ""
++msgstr "İletişim Kuralı:"
+ 
+ #: ../data/glade/dialogs.glade.h:23
+ msgid "Scanning CD-ROM"
+@@ -583,9 +580,8 @@ msgid "_Replace"
+ msgstr "_Değiştir"
+ 
+ #: ../data/glade/dialogs.glade.h:27
+-#, fuzzy
+ msgid "_Select Best Server"
+-msgstr "En yakın sunucu"
++msgstr "En İyi Sunucuyu _Seç"
+ 
+ #, fuzzy
+ #~ msgid "Third-Party Software"
