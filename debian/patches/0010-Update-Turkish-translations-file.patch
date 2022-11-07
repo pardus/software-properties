@@ -1,0 +1,1329 @@
+From: Fatih Altun <fatih.altun@pardus.org.tr>
+Date: Mon, 7 Nov 2022 12:56:39 +0300
+Subject: Update Turkish translations file
+
+---
+ po/tr.po | 989 ++++++++++++++++++++++++++++++++++++++++++---------------------
+ 1 file changed, 665 insertions(+), 324 deletions(-)
+
+diff --git a/po/tr.po b/po/tr.po
+index 629ed20..c7651aa 100644
+--- a/po/tr.po
++++ b/po/tr.po
+@@ -2,47 +2,164 @@
+ # Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+ # This file is distributed under the same license as the update-manager package.
+ # FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+-# Fatih Altun <fatih.altun@pardus.org.tr>, 2021.
++# Fatih Altun <fatih.altun@pardus.org.tr>, 2021-2022.
+ #
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: update-manager\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2009-08-28 12:48-0400\n"
+-"PO-Revision-Date: 2021-06-16 19:12+0300\n"
++"POT-Creation-Date: 2022-11-07 12:52+0300\n"
++"PO-Revision-Date: 2022-11-07 12:56+0300\n"
+ "Last-Translator: Fatih Altun <fatih.altun@pardus.org.tr>\n"
+-"Language-Team: Turkish <gelistirici@pardus.org.tr>\n"
++"Language-Team: Turkish <dev@pardus.org.tr>\n"
++"Language: tr\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "Plural-Forms: nplurals=1; plural=0\n"
+-"Language: tr\n"
+ "X-Generator: Gtranslator 3.38.0\n"
+ 
+-#: ../data/software-properties.desktop.in.h:1
++#: ../data/com.ubuntu.softwareproperties.policy.in.h:1
++msgid "Write Configuration"
++msgstr ""
++
++#: ../data/com.ubuntu.softwareproperties.policy.in.h:2
++msgid "To change software repository settings, you need to authenticate."
++msgstr ""
++
++#: ../data/software-properties-gtk.desktop.in.h:1
++#: ../data/gtkbuilder/main.ui.h:14
++msgid "Software & Updates"
++msgstr "Yazılım & Güncellemeler"
++
++#: ../data/software-properties-gtk.desktop.in.h:2
++#: ../data/software-properties-kde.desktop.in.h:2
+ msgid "Configure the sources for installable software and updates"
+ msgstr "Kurulabilir yazılım ve güncellemeler için kaynakları yapılandır"
+ 
+-#: ../data/software-properties.desktop.in.h:2
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:549
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:569
+-#: ../data/glade/main.glade.h:24
++#: ../data/software-properties-gtk.desktop.in.h:3
++msgid "Drivers;Repositories;Repository;PPA;"
++msgstr ""
++
++#: ../data/software-properties-kde.desktop.in.h:1
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:683
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:702
+ msgid "Software Sources"
+ msgstr "Yazılım Kaynakları"
+ 
+-#: ../software-properties-gtk:82
+-msgid "You need to be root to run this program"
+-msgstr "Bu programı çalıştırmak için yetkili olmanız gerekir"
++#: ../software-properties-gtk:97
++msgid ""
++"The --enable-component/-e command-line switch has been deprecated. Instead "
++"of 'software-properties-gtk -e multiverse' you can use \n"
++"'add-apt-repository multiverse'"
++msgstr ""
+ 
+-#: ../add-apt-repository:18
++#: ../software-properties-kde:75
++msgid "Print some debug information to the command line"
++msgstr ""
++
++#: ../software-properties-kde:78 ../add-apt-repository:59
++msgid "Print a lot of debug information to the command line"
++msgstr ""
++
++#: ../software-properties-kde:81
++msgid ""
++"No update on repository change (useful if called from an external program)"
++msgstr ""
++
++#: ../software-properties-kde:84
++msgid "Enable the specified component of the distro's repositories"
++msgstr ""
++
++#: ../software-properties-kde:88
++msgid "Enable PPA with the given name"
++msgstr ""
++
++#: ../software-properties-kde:92
++msgid "URL of keyserver"
++msgstr ""
++
++#: ../software-properties-kde:95
++msgid "Win ID to act as a dialogue for"
++msgstr ""
++
++#: ../software-properties-kde:98
++msgid "data directory for UI files"
++msgstr ""
++
++#: ../add-apt-repository:62
++msgid "remove repository from sources.list.d directory"
++msgstr ""
++
++#: ../add-apt-repository:65
++#, c-format
++msgid "URL of keyserver. Default: %default"
++msgstr ""
++
++#: ../add-apt-repository:68
++msgid "Allow downloading of the source packages from the repository"
++msgstr ""
++
++#: ../add-apt-repository:71
++msgid "Assume yes to all queries"
++msgstr ""
++
++#: ../add-apt-repository:74
++msgid "Update package cache after adding"
++msgstr ""
++
++#: ../add-apt-repository:78
+ msgid "Error: must run as root"
+ msgstr "Hata: yönetici hakları ile çalıştırılmalı"
+ 
+-#: ../add-apt-repository:22
++#: ../add-apt-repository:82
+ msgid "Error: need a repository as argument"
+ msgstr "Hata: argüman olarak bir depo gerekli"
+ 
+-#: ../add-apt-repository:31
++#: ../add-apt-repository:85
++#, fuzzy
++msgid "Error: need a single repository as argument"
++msgstr "Hata: argüman olarak bir depo gerekli"
++
++#: ../add-apt-repository:105
++#, c-format
++msgid "'%s' distribution component disabled for all sources."
++msgstr ""
++
++#: ../add-apt-repository:107
++#, c-format
++msgid "'%s' distribution component is already disabled for all sources."
++msgstr ""
++
++#: ../add-apt-repository:112
++#, c-format
++msgid "'%s' distribution component enabled for all sources."
++msgstr ""
++
++#: ../add-apt-repository:114
++#, c-format
++msgid "'%s' distribution component is already enabled for all sources."
++msgstr ""
++
++#: ../add-apt-repository:136
++#, c-format
++msgid " More info: %s"
++msgstr ""
++
++#: ../add-apt-repository:140
++msgid "Press [ENTER] to continue or ctrl-c to cancel removing it"
++msgstr ""
++
++#: ../add-apt-repository:142
++msgid "Press [ENTER] to continue or ctrl-c to cancel adding it"
++msgstr ""
++
++#: ../add-apt-repository:160 ../add-apt-repository:164
++#, c-format
++msgid "Error: '%s' doesn't exist in a sourcelist file"
++msgstr ""
++
++#: ../add-apt-repository:169
+ #, c-format
+ msgid "Error: '%s' invalid"
+ msgstr "Hata: '%s' geçersiz"
+@@ -89,57 +206,71 @@ msgstr ""
+ "Kurulu yazılımların listesini ve ne sıklıkla kullanıldıklarını dağıtım "
+ "projesine gönder."
+ 
+-#: ../softwareproperties/kde/DialogMirror.py:68
++#: ../softwareproperties/kde/DialogMirror.py:63
+ msgid "Mirror"
+ msgstr "Yansı"
+ 
+-#: ../softwareproperties/kde/DialogMirror.py:214
+-#: ../softwareproperties/kde/DialogMirror.py:215
++#: ../softwareproperties/kde/DialogMirror.py:184
++#: ../softwareproperties/kde/DialogMirror.py:185
++#: ../softwareproperties/kde/DialogMirror.py:218
+ msgid "Testing Mirrors"
+ msgstr "Yansılar Sınanıyor"
+ 
+-#: ../softwareproperties/kde/DialogMirror.py:214
+-#: ../softwareproperties/kde/DialogMirror.py:217
++#: ../softwareproperties/kde/DialogMirror.py:184
++#: ../softwareproperties/kde/DialogMirror.py:187
+ msgid "Cancel"
+ msgstr "İptal"
+ 
+-#. update_days = apt_pkg.Config.FindI(softwareproperties.CONF_MAP["autoupdate"])
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:193
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:175
++#: ../softwareproperties/kde/DialogMirror.py:219
++#: ../softwareproperties/gtk/DialogMirror.py:335
++msgid "No suitable download server was found"
++msgstr "Uygun herhangi bir indirme sunucusu bulunamadı"
++
++#: ../softwareproperties/kde/DialogMirror.py:220
++#: ../softwareproperties/gtk/DialogMirror.py:336
++msgid "Please check your Internet connection."
++msgstr "Lütfen internet bağlantınızı kontrol edin."
++
++#: ../softwareproperties/kde/DialogMirror.py:235
++#: ../softwareproperties/gtk/DialogMirror.py:351
++msgid "Canceling..."
++msgstr "İptal ediliyor..."
++
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:165
++#: ../data/gtkbuilder/main.ui.h:9
+ msgid "Daily"
+ msgstr "Günlük"
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:194
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:176
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:166
++#: ../data/gtkbuilder/main.ui.h:10
+ msgid "Every two days"
+ msgstr "Her iki günde bir"
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:195
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:177
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:167
++#: ../data/gtkbuilder/main.ui.h:11
+ msgid "Weekly"
+ msgstr "Haftalık"
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:196
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:178
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:168
++#: ../data/gtkbuilder/main.ui.h:12
+ msgid "Every two weeks"
+ msgstr "Her iki haftada bir"
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:203
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:187
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:175
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:256
+ #, python-format
+ msgid "Every %s days"
+ msgstr "Her %s günde bir"
+ 
+ #. TRANS: %s stands for the distribution name e.g. Debian or Ubuntu
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:245
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:255
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:217
+ #, python-format
+ msgid "%s updates"
+ msgstr "%s güncellemeleri"
+ 
+ #. TRANS: %s stands for the distribution name e.g. Debian or Ubuntu
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:249
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:258
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:221
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:316
+ #, python-format
+ msgid "%s Software"
+ msgstr "%s Kaynakları"
+@@ -147,207 +278,293 @@ msgstr "%s Kaynakları"
+ #. TRANSLATORS: Label for the components in the Internet section
+ #. first %s is the description of the component
+ #. second %s is the code name of the comp, eg main, universe
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:269
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:272
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:240
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:329
+ #, python-format
+ msgid "%s (%s)"
+ msgstr "%s (%s)"
+ 
+ #. add a separator and the option to choose another mirror from the list
+ #. #FIXME server_store.append(["sep", None, True])
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:322
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:427
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:384
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:441
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:303
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:459
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:552
+ msgid "Other..."
+ msgstr "Diğer..."
+ 
+-#. L10N: the example is of the format: deb http://ftp.debian.org sarge main
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:653
+-#, python-format
+-msgid ""
+-"<p><b>Enter the complete APT line of the<br /> repository that you want to "
+-"add as source</b></p><p>The APT line includes the type, location and "
+-"components of a repository,<br /> for example <i>\"%s\"</i>.</p>"
+-msgstr ""
+-"<p><b>Tam APT satırını girin<br /> kaynak olarak eklemek istediğiniz "
+-"deponun</b></p><p>APT satırı, bir deponun türünü, konumunu ve bileşenlerini "
+-"içerir.,<br /> örneğin <i>\"%s\"</i>.</p>"
+-
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:654
+-msgid "Add APT repository"
+-msgstr "APT deposu ekle"
+-
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:695
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:807
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:671
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:975
+ msgid "Import key"
+ msgstr "Anahtar aktar"
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:698
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:820
+-#: ../softwareproperties/gtk/DialogAptKey.py:88
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:674
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:989
+ msgid "Error importing selected file"
+ msgstr "Seçili dosyayı aktarmada hata"
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:699
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:821
+-#: ../softwareproperties/gtk/DialogAptKey.py:89
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:675
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:990
+ msgid "The selected file may not be a GPG key file or it might be corrupt."
+ msgstr "Seçili dosya bir GPG anahtar dosyası olmayabilir veya bozuk olabilir."
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:713
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:834
+-#: ../softwareproperties/gtk/DialogAptKey.py:101
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:688
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1006
+ msgid "Error removing the key"
+ msgstr "Anahtar kaldırmada hata"
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:714
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:835
+-#: ../softwareproperties/gtk/DialogAptKey.py:102
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:689
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1007
+ msgid "The key you selected could not be removed. Please report this as a bug."
+ msgstr "Seçtiğiniz anahtar kaldırılamadı. Lütfen bunu bir hata olarak iletin."
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:730
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:710
++msgid "Could not refresh cache"
++msgstr ""
++
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:720
+ msgid "Reload"
+ msgstr "Tekrar Yükle"
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:732
+-#: ../data/glade/dialogs.glade.h:4
+-msgid ""
+-"<b><big>The information about available software is out-of-date</big></b>\n"
+-"\n"
+-"To install software and updates from newly added or changed sources, you "
+-"have to reload the information about available software.\n"
+-"\n"
+-"You need a working internet connection to continue."
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:722
++msgid "Your local copy of the software catalog is out of date."
++msgstr ""
++
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:723
++msgid "A new copy will be downloaded."
+ msgstr ""
+-"<b><big>Mevcut yazılım bilgileri güncel değil</big></b>\n"
+-"\n"
+-"Yeni eklenmiş ya da değişmiş kaynaklardan yazılım ve güncellemeler kurmak "
+-"için mevcut yazılım bilgilerini tekrar yüklemeniz gerekmektedir.\n"
+-"\n"
+-"Devam etmek için çalışır durumda bir internet bağlantısı gerekmektedir."
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:762
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:728
++#: ../softwareproperties/gtk/DialogCacheOutdated.py:61
++#, fuzzy
++msgid "Refreshing software cache"
++msgstr "Yazılım kanalları değiştiriliyor"
++
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:730
++#: ../softwareproperties/gtk/DialogCacheOutdated.py:41
++msgid "Cache Refresh"
++msgstr ""
++
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:772
+ msgid "CD Error"
+ msgstr "CD Hatası"
+ 
+-#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:763
+-#, python-format
+-msgid ""
+-"<big><b>Error scanning the CD</b></big>\n"
+-"\n"
+-"%s"
+-msgstr ""
+-"<big><b>CD taramada hata</b></big>\n"
+-"\n"
+-"%s"
++#: ../softwareproperties/kde/SoftwarePropertiesKDE.py:773
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:841
++msgid "Error scanning the CD"
++msgstr "CD taranırken hata oluştu"
+ 
+-#: ../softwareproperties/kde/CdromProgress.py:51
++#: ../softwareproperties/kde/CdromProgress.py:54
+ msgid "CD Name"
+ msgstr "CD Adı"
+ 
+-#: ../softwareproperties/kde/CdromProgress.py:51
+-#: ../softwareproperties/gtk/CdromProgress.py:58
++#: ../softwareproperties/kde/CdromProgress.py:54
++#: ../softwareproperties/gtk/CdromProgress.py:59
+ msgid "Please enter a name for the disc"
+ msgstr "Lütfen disk için bir isim girin"
+ 
+-#: ../softwareproperties/kde/CdromProgress.py:55
++#: ../softwareproperties/kde/CdromProgress.py:58
+ msgid "Insert Disk"
+ msgstr "Disk Yerleştir"
+ 
+-#: ../softwareproperties/kde/CdromProgress.py:55
+-#: ../softwareproperties/gtk/CdromProgress.py:74
++#: ../softwareproperties/kde/CdromProgress.py:58
++#: ../softwareproperties/gtk/CdromProgress.py:75
+ msgid "Please insert a disk in the drive:"
+ msgstr "Lütfen sürücüye bir disk yerleştirin:"
+ 
+-#: ../softwareproperties/kde/DialogEdit.py:40
++#. L10N: the example is of the format: deb http://ftp.debian.org sarge main
++#: ../softwareproperties/kde/DialogAdd.py:55
++#, fuzzy
++msgid "Enter the complete APT line of the repository that you want to add."
++msgstr ""
++"<big><b>Kaynak olarak eklemek istediğiniz deponun tam APT satırını girin</"
++"b></big>"
++
++#: ../softwareproperties/kde/DialogAdd.py:57
++#, fuzzy, python-format
++msgid ""
++"Include the type, location and components of the repository. Example: %s"
++msgstr ""
++"APT satırı, deponun türünü, konumunu ve bileşenlerini içerir. Örneğin '%s'."
++
++#: ../softwareproperties/kde/DialogEdit.py:43
++#: ../data/gtkbuilder/dialog-edit-source.ui.h:1
+ msgid "Binary"
+ msgstr "İkili"
+ 
+-#: ../softwareproperties/kde/DialogEdit.py:41 ../data/glade/main.glade.h:25
++#: ../softwareproperties/kde/DialogEdit.py:44 ../data/gtkbuilder/main.ui.h:15
+ msgid "Source code"
+ msgstr "Kaynak kodu"
+ 
+-#: ../softwareproperties/SoftwareProperties.py:446
++#: ../softwareproperties/SoftwareProperties.py:502
++#: ../softwareproperties/SoftwareProperties.py:509
+ msgid "(Source Code)"
+ msgstr "(Kaynak Kodu)"
+ 
+-#: ../softwareproperties/SoftwareProperties.py:452
++#: ../softwareproperties/SoftwareProperties.py:515
+ msgid "Source Code"
+ msgstr "Kaynak Kodu"
+ 
+-#: ../softwareproperties/gtk/DialogMirror.py:244
++#: ../softwareproperties/gtk/DialogMirror.py:248
+ msgid "New mirror"
+ msgstr "Yeni yansı"
+ 
+-#: ../softwareproperties/gtk/DialogMirror.py:302
++#: ../softwareproperties/gtk/DialogMirror.py:324
+ #, python-format
+ msgid "Completed %s of %s tests"
+ msgstr "Tamamlanan: %s | Toplam: %s"
+ 
+-#: ../softwareproperties/gtk/DialogMirror.py:355
+-msgid "No suitable download server was found"
+-msgstr "Uygun herhangi bir indirme sunucusu bulunamadı"
+-
+-#: ../softwareproperties/gtk/DialogMirror.py:356
+-msgid "Please check your Internet connection."
+-msgstr "Lütfen internet bağlantınızı kontrol edin."
+-
+-#: ../softwareproperties/gtk/DialogMirror.py:372
+-msgid "Canceling..."
+-msgstr "İptal ediliyor..."
+-
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:560
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:580
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:693
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:712
+ msgid "Active"
+ msgstr "Etkin"
+ 
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:631
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:751
++msgid "Key"
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:768
+ msgid "_Add key from paste data"
+ msgstr "Yapıştırma verisinden _anahtar ekle"
+ 
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:644
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:655
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:781
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:792
+ msgid "Error importing key"
+ msgstr "Anaktar eklerken hata oluştu"
+ 
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:645
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:656
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:782
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:793
+ msgid "The selected data may not be a GPG key file or it might be corrupt."
+ msgstr "Seçilen veri, GPG anahtarı değil ya da bozulmuş olabilir."
+ 
+-#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:875
+-msgid "Error scanning the CD"
+-msgstr "CD taranırken hata oluştu"
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:842
++#, fuzzy
++msgid "Could not find a suitable CD."
++msgstr "'%s' kurulamadı"
+ 
+-#. some known keys
+-#: ../softwareproperties/gtk/DialogAptKey.py:37
+-#: ../softwareproperties/AptAuth.py:33
+-msgid "Ubuntu Archive Automatic Signing Key <ftpmaster@ubuntu.com>"
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1052
++#, fuzzy
++msgid "Applying changes..."
++msgstr "Değişiklikler uygulanıyor"
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1064
++#, fuzzy
++msgid "Error while applying changes"
++msgstr "Değişiklikler uygulanıyor"
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1151
++#: ../data/gtkbuilder/main.ui.h:42
++msgid "Re_vert"
+ msgstr ""
+-"Pardus Arşivi Kendiliğinden İmzalı Anahtarı <gelistirici@pardus.org.tr>"
+ 
+-#: ../softwareproperties/gtk/DialogAptKey.py:38
+-#: ../softwareproperties/AptAuth.py:34
+-msgid "Ubuntu CD Image Automatic Signing Key <cdimage@ubuntu.com>"
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1153
++#, fuzzy
++msgid "_Apply Changes"
++msgstr "Değişiklikler uygulanıyor"
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1155
++#, fuzzy
++msgid "_Cancel"
++msgstr "İptal"
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1157
++#, fuzzy
++msgid "_Restart..."
++msgstr "Şimdi _Tekrar Başlat"
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1172
++#, fuzzy
++msgid "Searching for available drivers..."
++msgstr "Kullanılmayan yazılımlar aranıyor"
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1202
++msgid "An error occurred while searching for drivers."
+ msgstr ""
+-"Pardus CD Görüntüsü Kendiliğinden İmzalı Anahtarı <cdimage@pardus.org.tr>"
+ 
+-#: ../softwareproperties/gtk/DialogAptKey.py:78
+-msgid "Choose a key-file"
+-msgstr "Bir anahtar dosyası seçin"
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1276
++msgid "This device is using the recommended driver."
++msgstr ""
+ 
+-#: ../softwareproperties/gtk/DialogAddSourcesList.py:39
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1277
++msgid "This device is using an alternative driver."
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1278
++msgid "This device is using a manually-installed driver."
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1279
++msgid "This device is not working."
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1288
++msgid "Continue using a manually installed driver"
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1315
++msgid "Using {} from {}"
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1317
++msgid "Using {}"
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1324
++msgid "open source"
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1326
++msgid "proprietary"
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1329
++#, python-brace-format
++msgid "{base_description} ({licence}, tested)"
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1331
++#, python-brace-format
++msgid "{base_description} ({licence})"
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1351
++msgid "Do not use the device"
++msgstr ""
++
++#. No drivers found.
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1371
++msgid "No additional drivers available."
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1389
++msgid "Unknown"
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1438
++msgid "You need to restart the computer to complete the driver changes."
++msgstr ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1452
++#, python-format
++msgid "%(count)d proprietary driver in use."
++msgid_plural "%(count)d proprietary drivers in use."
++msgstr[0] ""
++
++#: ../softwareproperties/gtk/SoftwarePropertiesGtk.py:1457
++#: ../data/gtkbuilder/main.ui.h:37
++#, fuzzy
++msgid "No proprietary drivers are in use."
++msgstr "Aygıtlar için kapalı kaynak sürücüler"
++
++#: ../softwareproperties/gtk/DialogAddSourcesList.py:43
+ msgid "Add Software Channels"
+ msgstr "Yazılım Kanalı Ekle"
+ 
+-#: ../softwareproperties/gtk/DialogAddSourcesList.py:80
++#: ../softwareproperties/gtk/DialogAddSourcesList.py:84
+ msgid "Install software additionally or only from this source?"
+ msgid_plural "Install software additionally or only from these sources?"
+ msgstr[0] "Yazılım ek olarak mı yoksa bu kaynaktan mı yüklensin?"
+ 
+-#: ../softwareproperties/gtk/DialogAddSourcesList.py:85
++#: ../softwareproperties/gtk/DialogAddSourcesList.py:89
+ msgid ""
+ "You can either add the following sources or replace your current sources by "
+ "them. Only install software from trusted sources."
+@@ -355,17 +572,17 @@ msgstr ""
+ "Aşağıdaki kaynakları ekleyebilir ya da geçerli kaynaklarınızı onlarla "
+ "değiştirebilirsiniz. Sadece güvenilir kaynaklardan yazılım yükleyin."
+ 
+-#: ../softwareproperties/gtk/DialogAddSourcesList.py:100
++#: ../softwareproperties/gtk/DialogAddSourcesList.py:104
+ msgid "There are no sources to install software from"
+ msgstr "Yazılımı kurmak için hiç kaynak yok"
+ 
+-#: ../softwareproperties/gtk/DialogAddSourcesList.py:101
++#: ../softwareproperties/gtk/DialogAddSourcesList.py:105
+ #, python-format
+ msgid "The file '%s' does not contain any valid software sources."
+ msgstr "'%s' dosyası geçerli hiçbir yazılım kaynağı içermiyor."
+ 
+ #. L10N: the example is of the format: deb http://ftp.debian.org sarge main
+-#: ../softwareproperties/gtk/DialogAdd.py:60
++#: ../softwareproperties/gtk/DialogAdd.py:62
+ #, python-format
+ msgid ""
+ "The APT line includes the type, location and components of a repository, for "
+@@ -373,63 +590,179 @@ msgid ""
+ msgstr ""
+ "APT satırı, deponun türünü, konumunu ve bileşenlerini içerir. Örneğin '%s'."
+ 
+-#: ../data/glade/main.glade.h:1
+-msgid "    "
+-msgstr "    "
++#: ../softwareproperties/gtk/DialogCacheOutdated.py:89
++msgid "Error while refreshing cache"
++msgstr ""
++
++#. some known keys
++#: ../softwareproperties/AptAuth.py:40
++msgid "Ubuntu Archive Automatic Signing Key <ftpmaster@ubuntu.com>"
++msgstr ""
++"Pardus Arşivi Kendiliğinden İmzalı Anahtarı <gelistirici@pardus.org.tr>"
++
++#: ../softwareproperties/AptAuth.py:41
++msgid "Ubuntu CD Image Automatic Signing Key <cdimage@ubuntu.com>"
++msgstr ""
++"Pardus CD Görüntüsü Kendiliğinden İmzalı Anahtarı <cdimage@pardus.org.tr>"
++
++#: ../softwareproperties/AptAuth.py:42
++#, fuzzy
++msgid "Ubuntu Archive Automatic Signing Key (2012) <ftpmaster@ubuntu.com>"
++msgstr ""
++"Pardus Arşivi Kendiliğinden İmzalı Anahtarı <gelistirici@pardus.org.tr>"
+ 
+-#: ../data/glade/main.glade.h:2
+-msgid "<b>Automatic updates</b>"
+-msgstr "<b>Otomatik güncelleme</b>"
++#: ../softwareproperties/AptAuth.py:43
++#, fuzzy
++msgid "Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>"
++msgstr ""
++"Pardus CD Görüntüsü Kendiliğinden İmzalı Anahtarı <cdimage@pardus.org.tr>"
+ 
+-#: ../data/glade/main.glade.h:3
++#: ../softwareproperties/AptAuth.py:44
++#, fuzzy
++msgid "Ubuntu Extras Archive Automatic Signing Key <ftpmaster@ubuntu.com>"
++msgstr ""
++"Pardus Arşivi Kendiliğinden İmzalı Anahtarı <gelistirici@pardus.org.tr>"
++
++#: ../data/gtkbuilder/dialog-edit-source.ui.h:2
++#, fuzzy
++msgid "Source"
++msgstr "Kaynak Kodu"
++
++#: ../data/gtkbuilder/dialog-edit-source.ui.h:3
++msgid "Edit Source"
++msgstr "Kaynak Düzenleme"
++
++#: ../data/gtkbuilder/dialog-edit-source.ui.h:4
++msgid "<b>Type:</b>"
++msgstr "<b>Tür:</b>"
++
++#: ../data/gtkbuilder/dialog-edit-source.ui.h:5
++msgid "<b>URI:</b>"
++msgstr "<b>URI:<b>"
++
++#: ../data/gtkbuilder/dialog-edit-source.ui.h:6
++msgid "<b>Distribution:</b>"
++msgstr "<b>Dağıtım:<b>"
++
++#: ../data/gtkbuilder/dialog-edit-source.ui.h:7
++msgid "<b>Components:</b>"
++msgstr "<b>Bileşenler:</b>"
++
++#: ../data/gtkbuilder/dialog-edit-source.ui.h:8
++msgid "<b>Comment:</b>"
++msgstr "<b>Yorum:</b>"
++
++#: ../data/gtkbuilder/dialog-add-sources-list.ui.h:1
++msgid "_Replace"
++msgstr "_Değiştir"
++
++#: ../data/gtkbuilder/dialog-cdrom-progress.ui.h:1
++msgid "Scanning CD-ROM"
++msgstr "CD-ROM taranıyor"
++
++#: ../data/gtkbuilder/main.ui.h:1
++msgid "Display immediately"
++msgstr ""
++
++#: ../data/gtkbuilder/main.ui.h:2
++msgid "Display weekly"
++msgstr ""
++
++#: ../data/gtkbuilder/main.ui.h:3
++#, fuzzy
++msgid "Display every two weeks"
++msgstr "Her iki haftada bir"
++
++#: ../data/gtkbuilder/main.ui.h:4
++msgid "For any new version"
++msgstr ""
++
++#: ../data/gtkbuilder/main.ui.h:5
++msgid "For long-term support versions"
++msgstr ""
++
++#: ../data/gtkbuilder/main.ui.h:6
++msgid "Never"
++msgstr ""
++
++#: ../data/gtkbuilder/main.ui.h:7
++#, fuzzy
++msgid "Download automatically"
++msgstr "İndirme adresi:"
++
++#: ../data/gtkbuilder/main.ui.h:8
++msgid "Download and install automatically"
++msgstr ""
++
++#: ../data/gtkbuilder/main.ui.h:13
++msgid "To install from a CD-ROM or DVD, insert the medium into the drive."
++msgstr "Bir CD-ROM ya da DVD'den kurmak için sürücü içine ortamı yerleştirin."
++
++#: ../data/gtkbuilder/main.ui.h:16
++msgid "Download from:"
++msgstr "İndirme adresi:"
++
++#: ../data/gtkbuilder/main.ui.h:17
+ msgid "<b>Downloadable from the Internet</b>"
+ msgstr "<b>İnternetten İndirilebilir</b>"
+ 
+-#: ../data/glade/main.glade.h:4
++#: ../data/gtkbuilder/main.ui.h:18
+ msgid "<b>Installable from CD-ROM/DVD</b>"
+ msgstr "<b>DVD/CDROM'dan Kurulabilir</b>"
+ 
+-#: ../data/glade/main.glade.h:5
+-msgid "<b>Release upgrade</b>"
+-msgstr "<b>Güvenilir yazılım sağlayıcıları</b>"
++#: ../data/gtkbuilder/main.ui.h:19
++msgid "Add..."
++msgstr "Ekle..."
+ 
+-#: ../data/glade/main.glade.h:6
+-msgid "<b>Trusted software providers</b>"
+-msgstr "<b>Güvenilir yazılım sağlayıcıları</b>"
++#: ../data/gtkbuilder/main.ui.h:20
++msgid "Edit..."
++msgstr "Düzenle..."
+ 
+-#: ../data/glade/main.glade.h:7
+-msgid "Add CD-ROM..."
+-msgstr "CD-ROM ekleyin..."
++#: ../data/gtkbuilder/main.ui.h:21
++msgid "Add Volume..."
++msgstr ""
+ 
+-#: ../data/glade/main.glade.h:8
+-msgid "Add..."
+-msgstr "Ekle..."
++#: ../data/gtkbuilder/main.ui.h:22
++msgid "Other Software"
++msgstr "Diğer Kaynaklar"
+ 
+-#: ../data/glade/main.glade.h:9
+-msgid "Authentication"
+-msgstr "Kimlik Sınaması"
++#: ../data/gtkbuilder/main.ui.h:23
++#, fuzzy
++msgid "Install updates from:"
++msgstr "Güncelemeleri _Yükle"
+ 
+-#: ../data/glade/main.glade.h:10
+-msgid "Chec_k for updates:"
++#: ../data/gtkbuilder/main.ui.h:24
++#, fuzzy
++msgid "Automatically check for updates:"
+ msgstr "_Güncellemeleri kontrol et:"
+ 
+-#: ../data/glade/main.glade.h:11
+-msgid "Download from:"
+-msgstr "İndirme adresi:"
++#: ../data/gtkbuilder/main.ui.h:25
++#, fuzzy
++msgid "When there are security updates:"
++msgstr "Debian 3.1 \"Sarge\" Güvenlik Güncellemeleri"
+ 
+-#: ../data/glade/main.glade.h:12
+-msgid "Edit..."
+-msgstr "Düzenle..."
++#: ../data/gtkbuilder/main.ui.h:26
++#, fuzzy
++msgid "When there are other updates:"
++msgstr "Yeni güncellemeler için yazılım kanallarını denetle"
+ 
+-#: ../data/glade/main.glade.h:13
+-msgid "Import the public key from a trusted software provider"
+-msgstr "Güvenilen bir yazılm sağlayıcısından açık anahtarı içe aktar"
++#: ../data/gtkbuilder/main.ui.h:27
++msgid "Notify me of a new Ubuntu version:"
++msgstr ""
+ 
+-#: ../data/glade/main.glade.h:14
+-msgid "Install _security updates without confirmation"
+-msgstr "_Onaylatmadan güvenlik güncellemelerini kur"
++#: ../data/gtkbuilder/main.ui.h:28
++msgid "Updates"
++msgstr "Güncellemeler"
++
++#: ../data/gtkbuilder/main.ui.h:29
++msgid "<b>Trusted software providers</b>"
++msgstr "<b>Güvenilir yazılım sağlayıcıları</b>"
++
++#: ../data/gtkbuilder/main.ui.h:30
++msgid "    "
++msgstr "    "
+ 
+-#: ../data/glade/main.glade.h:15
++#: ../data/gtkbuilder/main.ui.h:31
+ msgid ""
+ "Keys are used to authenticate the correct source of software and so protect "
+ "your computer from malicious software"
+@@ -437,91 +770,107 @@ msgstr ""
+ "Anahtarlar, yazılım kaynaklarının doğrulanması için kullanılır ve böylece "
+ "bilgisayarınız kötü niyetli yazılımlardan korunur"
+ 
+-#: ../data/glade/main.glade.h:16
+-msgid ""
+-"Never\n"
+-"Normal releases\n"
+-"Long term support releases only"
+-msgstr ""
+-"Asla\n"
+-"Normal sürümler\n"
+-"Yalnızca uzun vadeli destek sürümleri"
+-
+-#: ../data/glade/main.glade.h:19
+-msgid "Only _notify about available updates"
+-msgstr "Yalnızca mevcut güncellemeler hakkında _bilgilendir"
++#: ../data/gtkbuilder/main.ui.h:32
++msgid "_Import Key File..."
++msgstr "Anahtar Dosyayı İçe _Aktar..."
+ 
+-#: ../data/glade/main.glade.h:20
+-msgid "Other Software"
+-msgstr "Diğer Kaynaklar"
++#: ../data/gtkbuilder/main.ui.h:33
++msgid "Import the public key from a trusted software provider"
++msgstr "Güvenilen bir yazılm sağlayıcısından açık anahtarı içe aktar"
+ 
+-#: ../data/glade/main.glade.h:21
++#: ../data/gtkbuilder/main.ui.h:34
+ msgid "Restore _Defaults"
+ msgstr "_Öntanımlılara Dön"
+ 
+-#: ../data/glade/main.glade.h:22
++#: ../data/gtkbuilder/main.ui.h:35
+ msgid "Restore the default keys of your distribution"
+ msgstr "Dağıtımınızın öntanımlı anahtarlarını geriye döndür"
+ 
+-#: ../data/glade/main.glade.h:23
+-msgid "Show new distribution releases: "
+-msgstr "Yeni dağıtım sürümlerini göster:"
+-
+-#: ../data/glade/main.glade.h:26
+-msgid "Statistics"
+-msgstr "İstatistikler"
++#: ../data/gtkbuilder/main.ui.h:36
++msgid "Authentication"
++msgstr "Kimlik Sınaması"
+ 
+-#: ../data/glade/main.glade.h:27
+-msgid "Submit statistical information"
+-msgstr "İstatistiki Bilgileri Bildir"
++#: ../data/gtkbuilder/main.ui.h:38
++msgid ""
++"<small>A proprietary driver has private code that Ubuntu developers can't "
++"review or improve. Security and other updates are dependent on the driver "
++"vendor.</small>"
++msgstr ""
+ 
+-#: ../data/glade/main.glade.h:28
+-msgid "To install from a CD-ROM or DVD, insert the medium into the drive."
+-msgstr "Bir CD-ROM ya da DVD'den kurmak için sürücü içine ortamı yerleştirin."
++#: ../data/gtkbuilder/main.ui.h:39
++msgid "Additional Drivers"
++msgstr ""
+ 
+-#: ../data/glade/main.glade.h:29
+-msgid "Updates"
+-msgstr "Güncellemeler"
++#: ../data/gtkbuilder/main.ui.h:40
++msgid ""
++"Proposed updates are only for testing updates and providing development "
++"feedback. Enabling this may introduce instability."
++msgstr ""
+ 
+-#: ../data/glade/main.glade.h:30
+-msgid "_Download all updates in the background"
+-msgstr "Arka planda tüm güncellemeleri _indir"
++#: ../data/gtkbuilder/main.ui.h:41
++msgid "Developer Options"
++msgstr ""
+ 
+-#: ../data/glade/main.glade.h:31
+-msgid "_Import Key File..."
+-msgstr "Anahtar Dosyayı İçe _Aktar..."
++#: ../data/gtkbuilder/dialog-cache-outofdate.ui.h:1
++#: ../data/gtkbuilder/dialog-mirror.ui.h:6
++msgid " "
++msgstr ""
+ 
+-#: ../data/glade/dialogs.glade.h:1
++#: ../data/gtkbuilder/dialog-cache-outofdate.ui.h:2
+ msgid ""
+-"<b><big>Testing download servers</big></b>\n"
++"<b><big>The information about available software is out-of-date</big></b>\n"
+ "\n"
+-"A series of tests will be done to find the best mirror for your location."
++"To install software and updates from newly added or changed sources, you "
++"have to reload the information about available software.\n"
++"\n"
++"You need a working internet connection to continue."
+ msgstr ""
+-"<b><big>İndirme sunucuları deneniyor</big></b>\n"
++"<b><big>Mevcut yazılım bilgileri güncel değil</big></b>\n"
+ "\n"
+-"Konumunuza en uygun sunucuyu bulmak için birkaç deneme yapılacak."
++"Yeni eklenmiş ya da değişmiş kaynaklardan yazılım ve güncellemeler kurmak "
++"için mevcut yazılım bilgilerini tekrar yüklemeniz gerekmektedir.\n"
++"\n"
++"Devam etmek için çalışır durumda bir internet bağlantısı gerekmektedir."
+ 
+-#: ../data/glade/dialogs.glade.h:9
+-msgid "<b>Comment:</b>"
+-msgstr "<b>Yorum:</b>"
++#: ../data/gtkbuilder/dialog-cache-outofdate.ui.h:7
++msgid "_Reload"
++msgstr "_Yenile"
+ 
+-#: ../data/glade/dialogs.glade.h:10
+-msgid "<b>Components:</b>"
+-msgstr "<b>Bileşenler:</b>"
++#: ../data/gtkbuilder/dialog-mirror.ui.h:1
++msgid "Choose a Download Server"
++msgstr "Bir İndirme Sunucusu Seç"
+ 
+-#: ../data/glade/dialogs.glade.h:11
+-msgid "<b>Distribution:</b>"
+-msgstr "<b>Dağıtım:<b>"
++#: ../data/gtkbuilder/dialog-mirror.ui.h:2
++msgid "Protocol:"
++msgstr "İletişim Kuralı:"
+ 
+-#: ../data/glade/dialogs.glade.h:12
+-msgid "<b>Type:</b>"
+-msgstr "<b>Tür:</b>"
++#: ../data/gtkbuilder/dialog-mirror.ui.h:3
++msgid "_Select Best Server"
++msgstr "En İyi Sunucuyu _Seç"
+ 
+-#: ../data/glade/dialogs.glade.h:13
+-msgid "<b>URI:</b>"
+-msgstr "<b>URI:<b>"
++#: ../data/gtkbuilder/dialog-mirror.ui.h:4
++msgid "Performs a connection test to find the best mirror for your location"
++msgstr ""
++"Konumunuz için en iyi yansıyı belirlemek amacıyla bir bağlantı sınaması "
++"gerçekleştirir"
++
++#: ../data/gtkbuilder/dialog-mirror.ui.h:5
++msgid "Choose _Server"
++msgstr "Sunucu _Seç"
++
++#: ../data/gtkbuilder/dialog-mirror.ui.h:7
++#, fuzzy
++msgid ""
++"<b><big>Testing download servers</big></b>\n"
++"\n"
++"A series of tests will be performed to find the best mirror for your "
++"location."
++msgstr ""
++"<b><big>İndirme sunucuları deneniyor</big></b>\n"
++"\n"
++"Konumunuza en uygun sunucuyu bulmak için birkaç deneme yapılacak."
+ 
+-#: ../data/glade/dialogs.glade.h:14
++#: ../data/gtkbuilder/dialog-add.ui.h:1
+ msgid ""
+ "<big><b>Enter the complete APT line of the repository that you want to add "
+ "as source</b></big>"
+@@ -529,59 +878,85 @@ msgstr ""
+ "<big><b>Kaynak olarak eklemek istediğiniz deponun tam APT satırını girin</"
+ "b></big>"
+ 
+-#: ../data/glade/dialogs.glade.h:15
++#: ../data/gtkbuilder/dialog-add.ui.h:2
+ msgid "APT line:"
+ msgstr "APT satırı"
+ 
+-#: ../data/glade/dialogs.glade.h:16
+-msgid ""
+-"Binary\n"
+-"Source"
+-msgstr ""
+-"İkili\n"
+-"Kaynak"
++#: ../data/gtkbuilder/dialog-add.ui.h:3
++msgid "_Add Source"
++msgstr "Kaynak _Ekle"
+ 
+-#: ../data/glade/dialogs.glade.h:18
+-msgid "Choose _Server"
+-msgstr "Sunucu _Seç"
++#~ msgid "You need to be root to run this program"
++#~ msgstr "Bu programı çalıştırmak için yetkili olmanız gerekir"
+ 
+-#: ../data/glade/dialogs.glade.h:19
+-msgid "Choose a Download Server"
+-msgstr "Bir İndirme Sunucusu Seç"
++#, python-format
++#~ msgid ""
++#~ "<p><b>Enter the complete APT line of the<br /> repository that you want "
++#~ "to add as source</b></p><p>The APT line includes the type, location and "
++#~ "components of a repository,<br /> for example <i>\"%s\"</i>.</p>"
++#~ msgstr ""
++#~ "<p><b>Tam APT satırını girin<br /> kaynak olarak eklemek istediğiniz "
++#~ "deponun</b></p><p>APT satırı, bir deponun türünü, konumunu ve "
++#~ "bileşenlerini içerir.,<br /> örneğin <i>\"%s\"</i>.</p>"
+ 
+-#: ../data/glade/dialogs.glade.h:20
+-msgid "Edit Source"
+-msgstr "Kaynak Düzenleme"
++#~ msgid "Add APT repository"
++#~ msgstr "APT deposu ekle"
+ 
+-#: ../data/glade/dialogs.glade.h:21
+-msgid "Performs a connection test to find the best mirror for your location"
+-msgstr ""
+-"Konumunuz için en iyi yansıyı belirlemek amacıyla bir bağlantı sınaması "
+-"gerçekleştirir"
++#, python-format
++#~ msgid ""
++#~ "<big><b>Error scanning the CD</b></big>\n"
++#~ "\n"
++#~ "%s"
++#~ msgstr ""
++#~ "<big><b>CD taramada hata</b></big>\n"
++#~ "\n"
++#~ "%s"
+ 
+-#: ../data/glade/dialogs.glade.h:22
+-msgid "Protocol:"
+-msgstr "İletişim Kuralı:"
++#~ msgid "Choose a key-file"
++#~ msgstr "Bir anahtar dosyası seçin"
+ 
+-#: ../data/glade/dialogs.glade.h:23
+-msgid "Scanning CD-ROM"
+-msgstr "CD-ROM taranıyor"
++#~ msgid "<b>Automatic updates</b>"
++#~ msgstr "<b>Otomatik güncelleme</b>"
+ 
+-#: ../data/glade/dialogs.glade.h:24
+-msgid "_Add Source"
+-msgstr "Kaynak _Ekle"
++#~ msgid "<b>Release upgrade</b>"
++#~ msgstr "<b>Güvenilir yazılım sağlayıcıları</b>"
+ 
+-#: ../data/glade/dialogs.glade.h:25
+-msgid "_Reload"
+-msgstr "_Yenile"
++#~ msgid "Add CD-ROM..."
++#~ msgstr "CD-ROM ekleyin..."
+ 
+-#: ../data/glade/dialogs.glade.h:26
+-msgid "_Replace"
+-msgstr "_Değiştir"
++#~ msgid "Install _security updates without confirmation"
++#~ msgstr "_Onaylatmadan güvenlik güncellemelerini kur"
+ 
+-#: ../data/glade/dialogs.glade.h:27
+-msgid "_Select Best Server"
+-msgstr "En İyi Sunucuyu _Seç"
++#~ msgid ""
++#~ "Never\n"
++#~ "Normal releases\n"
++#~ "Long term support releases only"
++#~ msgstr ""
++#~ "Asla\n"
++#~ "Normal sürümler\n"
++#~ "Yalnızca uzun vadeli destek sürümleri"
++
++#~ msgid "Only _notify about available updates"
++#~ msgstr "Yalnızca mevcut güncellemeler hakkında _bilgilendir"
++
++#~ msgid "Show new distribution releases: "
++#~ msgstr "Yeni dağıtım sürümlerini göster:"
++
++#~ msgid "Statistics"
++#~ msgstr "İstatistikler"
++
++#~ msgid "Submit statistical information"
++#~ msgstr "İstatistiki Bilgileri Bildir"
++
++#~ msgid "_Download all updates in the background"
++#~ msgstr "Arka planda tüm güncellemeleri _indir"
++
++#~ msgid ""
++#~ "Binary\n"
++#~ "Source"
++#~ msgstr ""
++#~ "İkili\n"
++#~ "Kaynak"
+ 
+ #, fuzzy
+ #~ msgid "Third-Party Software"
+@@ -594,10 +969,6 @@ msgstr "En İyi Sunucuyu _Seç"
+ #~ msgid "Software Channel"
+ #~ msgstr "Yazılım Kanalı"
+ 
+-#, fuzzy
+-#~ msgid "Source"
+-#~ msgstr "Kaynak Kodu"
+-
+ #~ msgid "After one week"
+ #~ msgstr "Bir hafta sonra"
+ 
+@@ -884,9 +1255,6 @@ msgstr "En İyi Sunucuyu _Seç"
+ #~ msgid "Upgrading"
+ #~ msgstr "Yükseltiliyor"
+ 
+-#~ msgid "Searching for obsolete software"
+-#~ msgstr "Kullanılmayan yazılımlar aranıyor"
+-
+ #~ msgid "System upgrade is complete."
+ #~ msgstr "Sistem yükseltmesi tamamlandı."
+ 
+@@ -906,12 +1274,6 @@ msgstr "En İyi Sunucuyu _Seç"
+ #~ msgid "Fetching file %li of %li"
+ #~ msgstr "Dosyalar inidiriliyor. İnen: %li  Toplam: %li"
+ 
+-#~ msgid "Applying changes"
+-#~ msgstr "Değişiklikler uygulanıyor"
+-
+-#~ msgid "Could not install '%s'"
+-#~ msgstr "'%s' kurulamadı"
+-
+ #~ msgid ""
+ #~ "The upgrade aborts now. Please report this bug against the 'update-"
+ #~ "manager' package and include the files in /var/log/dist-upgrade/ in the "
+@@ -1065,9 +1427,6 @@ msgstr "En İyi Sunucuyu _Seç"
+ #~ msgid "Fetching and installing the upgrades"
+ #~ msgstr "Yükseltmeler indiriliyor ve kuruluyor"
+ 
+-#~ msgid "Modifying the software channels"
+-#~ msgstr "Yazılım kanalları değiştiriliyor"
+-
+ #~ msgid "Preparing the upgrade"
+ #~ msgstr "Yükseltme hazırlanıyor"
+ 
+@@ -1089,9 +1448,6 @@ msgstr "En İyi Sunucuyu _Seç"
+ #~ msgid "_Report Bug"
+ #~ msgstr "_Hatayı Bildir"
+ 
+-#~ msgid "_Restart Now"
+-#~ msgstr "Şimdi _Tekrar Başlat"
+-
+ #~ msgid "_Resume Upgrade"
+ #~ msgstr "Yükseltmeye _Devam Et"
+ 
+@@ -1304,9 +1660,6 @@ msgstr "En İyi Sunucuyu _Seç"
+ #~ msgid "Chec_k"
+ #~ msgstr "_Denetle"
+ 
+-#~ msgid "Check the software channels for new updates"
+-#~ msgstr "Yeni güncellemeler için yazılım kanallarını denetle"
+-
+ #~ msgid "Description"
+ #~ msgstr "Tanım"
+ 
+@@ -1328,9 +1681,6 @@ msgstr "En İyi Sunucuyu _Seç"
+ #~ msgid "Show progress of single files"
+ #~ msgstr "Tekil dosyaların ilerleyişini göster"
+ 
+-#~ msgid "Software Updates"
+-#~ msgstr "Yazılım Güncellemeleri"
+-
+ #~ msgid ""
+ #~ "Software updates correct errors, eliminate security vulnerabilities and "
+ #~ "provide new features."
+@@ -1353,9 +1703,6 @@ msgstr "En İyi Sunucuyu _Seç"
+ #~ msgid "_Hide this information in the future"
+ #~ msgstr "_Bu bilgiyi gelecekte sakla"
+ 
+-#~ msgid "_Install Updates"
+-#~ msgstr "Güncelemeleri _Yükle"
+-
+ #, fuzzy
+ #~ msgid "_Upgrade"
+ #~ msgstr "_Yükselt"
+@@ -1430,9 +1777,6 @@ msgstr "En İyi Sunucuyu _Seç"
+ #~ msgid "Community maintained"
+ #~ msgstr "Topluluk tarafından bakılan"
+ 
+-#~ msgid "Proprietary drivers for devices"
+-#~ msgstr "Aygıtlar için kapalı kaynak sürücüler"
+-
+ #~ msgid "Cdrom with Ubuntu 6.10 'Edgy Eft'"
+ #~ msgstr "Ubuntu 6.10 'Edgy Eft' Cdrom'u"
+ 
+@@ -1536,9 +1880,6 @@ msgstr "En İyi Sunucuyu _Seç"
+ #~ msgid "http://security.debian.org/"
+ #~ msgstr "http://security.debian.org/"
+ 
+-#~ msgid "Debian 3.1 \"Sarge\" Security Updates"
+-#~ msgstr "Debian 3.1 \"Sarge\" Güvenlik Güncellemeleri"
+-
+ #~ msgid "Debian \"Etch\" (testing)"
+ #~ msgstr "Debian \"Etch\" (test)"
+ 
